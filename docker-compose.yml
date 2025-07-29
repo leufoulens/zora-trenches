@@ -19,6 +19,7 @@ services:
       - X_API_KEY=${X_API_KEY}
       - POLL_INTERVAL_SECONDS=${POLL_INTERVAL_SECONDS}
       - HIGH_FOLLOWERS_THRESHOLD=${HIGH_FOLLOWERS_THRESHOLD}
+      - ZORA_API_KEY=${ZORA_API_KEY}
     depends_on:
       - redis
     networks:
