@@ -31,6 +31,9 @@ RUN npm ci --only=production && npm cache clean --force
 # Копируем скомпилированные файлы из builder стадии
 COPY --from=builder /app/dist ./dist
 
+# Копируем папку public с ресурсами
+COPY --from=builder /app/public ./public
+
 # Создаем пользователя для безопасности
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nodejs -u 1001
