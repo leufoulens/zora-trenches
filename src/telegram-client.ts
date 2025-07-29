@@ -4,6 +4,8 @@ import { config } from './config';
 import { XApiClient } from './x-api-client';
 import { FarcasterClient } from './farcaster-client';
 import { RedisClient } from './redis-client';
+import * as path from 'path';
+import * as fs from 'fs';
 
 export class TelegramClient {
   private bot: TelegramBot;
@@ -194,12 +196,18 @@ export class TelegramClient {
     }
   }
 
-  private async formatCreatorMessage(creator: Creator): Promise<string> {
+  private async formatCreatorMessage(creator: Creator, reason?: string): Promise<string> {
     const { address, name, createdAt, creatorProfile } = creator;
     const { followedEdges, username, socialAccounts } = creatorProfile;
     const followerIndicator = this.getFollowerIndicator(followedEdges.count);
     
     let message = `NEW CREATOR\n\n`;
+    
+    // Add reason at the beginning if provided
+    if (reason) {
+      message = `${reason}\n\n` + message;
+    }
+    
     message += `Name: ${this.escapeMarkdown(name)}\n`;
     message += `Address: \`${address}\`\n`;
     message += `Followers: ${followedEdges.count} ${followerIndicator}\n`;
@@ -248,8 +256,8 @@ export class TelegramClient {
       }
     }
 
-    // Add prefix for high follower count
-    if (followedEdges.count >= config.highFollowersThreshold) {
+    // Add prefix for high follower count (only if no reason provided)
+    if (!reason && followedEdges.count >= config.highFollowersThreshold) {
       message = `HIGH VALUE CREATOR\n\n` + message;
     }
 
@@ -320,22 +328,46 @@ export class TelegramClient {
     }
   }
 
-  async sendToHigh(creator: Creator): Promise<void> {
+  async sendToHigh(creator: Creator, reason: string): Promise<void> {
     try {
-      const message = await this.formatCreatorMessage(creator);
+      const message = await this.formatCreatorMessage(creator, reason);
       const keyboard = this.getCreatorKeyboardMarkup(creator);
       
+      // Check if this is an ALPHA USER and image exists
+      if (reason === 'ALPHA USER') {
+        const imagePath = path.join(process.cwd(), 'public', 'alphaimage.png');
+        
+        if (fs.existsSync(imagePath)) {
+          try {
+            await this.bot.sendPhoto(config.telegramChatHigh, imagePath, {
+              caption: message,
+              parse_mode: 'Markdown',
+              reply_markup: keyboard
+            });
+            console.log(`Sent to HIGH chat with image: ${creator.name} (ALPHA USER)`);
+            return;
+          } catch (photoError) {
+            console.error(`Error sending photo for ALPHA USER ${creator.address}:`, photoError);
+            // Fall through to send text message
+          }
+        } else {
+          console.warn(`Alpha image not found at ${imagePath}`);
+        }
+      }
+      
+      // Send regular text message (either not ALPHA USER or image failed)
       await this.bot.sendMessage(config.telegramChatHigh, message, {
         parse_mode: 'Markdown',
         disable_web_page_preview: true,
         reply_markup: keyboard
       });
-      console.log(`Sent to HIGH chat: ${creator.name} (${creator.creatorProfile.followedEdges.count} followers)`);
+      console.log(`Sent to HIGH chat: ${creator.name} (${reason})`);
+      
     } catch (error) {
       console.error(`Error sending to HIGH chat for ${creator.address}:`, error);
       // Fallback: try sending without Markdown if it fails
       try {
-        const plainMessage = await this.formatCreatorMessage(creator);
+        const plainMessage = await this.formatCreatorMessage(creator, reason);
         const escapedMessage = plainMessage.replace(/[`*_[\]()]/g, '');
         await this.bot.sendMessage(config.telegramChatHigh, escapedMessage);
         console.log(`Sent fallback message to HIGH chat: ${creator.name}`);

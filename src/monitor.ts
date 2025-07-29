@@ -127,8 +127,8 @@ export class ZoraMonitor {
           const highValueCheck = await this.checkHighValueCreator(creator);
           if (highValueCheck.isHigh || isAlphaUser) {
             highValueCount++;
-            await this.telegramClient.sendToHigh(creator);
             const reason = isAlphaUser ? 'ALPHA USER' : highValueCheck.reason;
+            await this.telegramClient.sendToHigh(creator, reason);
             console.log(`HIGH VALUE: ${creator.name} - ${reason}`);
           }
           
