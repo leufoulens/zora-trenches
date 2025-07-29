@@ -1,0 +1,32 @@
+{
+    "status": "success",
+    "msg": "success",
+    "data": {
+      "id": "1456306956159885319",
+      "name": "Redwan Kabir",
+      "userName": "RedwanK50046074",
+      "location": "",
+      "url": "",
+      "description": "",
+      "entities": {
+        "description": {}
+      },
+      "protected": false,
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "followers": 1,
+      "following": 69,
+      "favouritesCount": 4,
+      "statusesCount": 8,
+      "mediaCount": 0,
+      "createdAt": "2021-11-04T17:07:00.000000Z",
+      "coverPicture": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1456307001827463183/G6iO9dxh_normal.jpg",
+      "canDm": false,
+      "affiliatesHighlightedLabel": {},
+      "isAutomated": false,
+      "automatedBy": null,
+      "pinnedTweetIds": []
+    }
+  }

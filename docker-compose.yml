@@ -1,0 +1,44 @@
+services:
+  # Основное приложение
+  zora-trenches:
+    build: .
+    container_name: zora-trenches-app
+    restart: unless-stopped
+    environment:
+      # Redis подключение к контейнеру
+      - REDIS_URL=redis://redis:6379
+      # Остальные переменные нужно задать в .env файле
+      - ZORA_ENDPOINT_URL=${ZORA_ENDPOINT_URL}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_GENERAL=${TELEGRAM_CHAT_GENERAL}
+      - TELEGRAM_CHAT_HIGH=${TELEGRAM_CHAT_HIGH}
+      - PROXY_HOST=${PROXY_HOST}
+      - PROXY_PORT=${PROXY_PORT}
+      - PROXY_USERNAME=${PROXY_USERNAME}
+      - PROXY_PASSWORD=${PROXY_PASSWORD}
+      - X_API_KEY=${X_API_KEY}
+      - POLL_INTERVAL_SECONDS=${POLL_INTERVAL_SECONDS}
+      - HIGH_FOLLOWERS_THRESHOLD=${HIGH_FOLLOWERS_THRESHOLD}
+    depends_on:
+      - redis
+    networks:
+      - zora-network
+
+  # Redis база данных
+  redis:
+    image: redis:7-alpine
+    container_name: zora-trenches-redis
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - zora-network
+
+volumes:
+  redis_data:
+
+networks:
+  zora-network:
+    driver: bridge 

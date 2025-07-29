@@ -1,0 +1,54 @@
+{
+    "result": {
+        "user": {
+            "fid": 879681,
+            "displayName": "worldfinaltour",
+            "profile": {
+                "bio": {
+                    "text": "I’m working on… on… ~~",
+                    "mentions": [],
+                    "channelMentions": []
+                },
+                "location": {
+                    "placeId": "",
+                    "description": ""
+                }
+            },
+            "followerCount": 1,
+            "followingCount": 59,
+            "username": "frejus",
+            "pfp": {
+                "url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/50e2e6bc-4249-4585-f87f-c2f8b0db3e00/rectcrop3",
+                "verified": false
+            },
+            "connectedAccounts": [],
+            "viewerContext": {
+                "following": false,
+                "followedBy": false,
+                "canSendDirectCasts": false,
+                "enableNotifications": false,
+                "hasUploadedInboxKeys": true
+            }
+        },
+        "collectionsOwned": [],
+        "extras": {
+            "fid": 879681,
+            "custodyAddress": "0x5f90c23a8e61539093f39587f113441057aac979",
+            "ethWallets": [
+                "0x25e7715bbDe3b5dc03E60b11CF71Bf673AC69ebc"
+            ],
+            "solanaWallets": [],
+            "walletLabels": [
+                {
+                    "address": "0x25e7715bbDe3b5dc03E60b11CF71Bf673AC69ebc",
+                    "labels": [
+                        "primary",
+                        "warpcast"
+                    ]
+                }
+            ],
+            "v2": false,
+            "publicSpamLabel": "0 (likely to engage in spammy behavior)"
+        }
+    }
+}
