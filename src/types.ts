@@ -8,6 +8,12 @@ export interface SocialAccounts {
   twitter: SocialAccount | null;
 }
 
+export interface CreatedCoin {
+  name: string;
+  address: string;
+  marketCap: string;
+}
+
 export interface CreatorProfile {
   id: string;
   followedEdges: {
@@ -15,6 +21,15 @@ export interface CreatorProfile {
   };
   username: string;
   socialAccounts: SocialAccounts;
+  vcFollowingStatus: string;
+  followersInVcFollowing: {
+    count: number;
+  };
+  createdCoins: {
+    edges: {
+      node: CreatedCoin;
+    }[];
+  };
 }
 
 export interface Creator {

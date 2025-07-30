@@ -109,6 +109,17 @@ export class ZoraMonitor {
         if (!isProcessed) {
           newCreatorsCount++;
           
+          // Check if Twitter account is in blacklist
+          const twitterUsername = creator.creatorProfile.socialAccounts.twitter?.username;
+          if (twitterUsername) {
+            const isBlacklisted = await this.redisClient.isInTwitterBlacklist(twitterUsername);
+            if (isBlacklisted) {
+              console.log(`Skipping creator ${creator.name} - Twitter @${twitterUsername} is blacklisted`);
+              await this.redisClient.markAddressAsProcessed(creator.address);
+              continue;
+            }
+          }
+          
           // Count profiles with social networks for statistics
           if (creator.creatorProfile.socialAccounts.twitter?.username) {
             twitterProfilesProcessed++;
@@ -181,6 +192,16 @@ export class ZoraMonitor {
     let maxFollowers = zoraFollowers;
     let platform = 'Zora';
 
+    // Check for high value tokens first (highest priority)
+    const maxTokenMarketCap = this.getMaxTokenMarketCap(creator);
+    if (maxTokenMarketCap >= 500000) {
+      return { 
+        isHigh: true, 
+        reason: `HIGH TOP TOKEN: $${maxTokenMarketCap.toLocaleString('en-US')}`, 
+        maxFollowers: zoraFollowers 
+      };
+    }
+
     // Check Zora followers
     if (zoraFollowers >= config.highFollowersThreshold) {
       return { 
@@ -239,6 +260,25 @@ export class ZoraMonitor {
       reason: `Max followers: ${maxFollowers.toLocaleString('en-US')} on ${platform}`, 
       maxFollowers 
     };
+  }
+
+  private getMaxTokenMarketCap(creator: Creator): number {
+    if (!creator.creatorProfile.createdCoins.edges.length) {
+      return 0;
+    }
+
+    let maxMarketCap = 0;
+
+    for (const edge of creator.creatorProfile.createdCoins.edges) {
+      const token = edge.node;
+      const marketCap = parseFloat(token.marketCap) || 0;
+      
+      if (marketCap > maxMarketCap) {
+        maxMarketCap = marketCap;
+      }
+    }
+
+    return maxMarketCap;
   }
 
   private async checkAlphaUser(creator: Creator): Promise<boolean> {

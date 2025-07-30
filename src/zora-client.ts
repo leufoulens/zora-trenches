@@ -20,6 +20,7 @@ export class ZoraClient {
       headers: {
         'Content-Type': 'application/json',
         'User-Agent': 'ZoraTrenchesMonitor/1.0',
+        'Authorization': `Bearer ${config.zoraApiKey}`
       }
     });
   }
@@ -27,35 +28,48 @@ export class ZoraClient {
   async getNewCreators(): Promise<ExploreListResponse> {
     const query = `
       query GetListOfNewCreators {
-        exploreList(listType: NEW_CREATORS, first: 10) {
-          edges {
-            node {
-              address
-              name
-              createdAt
-              creatorProfile {
-                ... on GraphQLAccountProfile {
-                  id
-                  followedEdges {
-                    count
-                  }
-                  username
-                  socialAccounts {
-                    farcaster {
-                      displayName
-                      username
-                    }
-                    twitter {
-                      displayName
-                      username
-                    }
-                  }
+  exploreList(listType: NEW_CREATORS, first: 10) {
+    edges {
+      node {
+        address
+        name
+        createdAt
+        creatorProfile {
+          ... on GraphQLAccountProfile {
+            id
+            followedEdges {
+              count
+            }
+            username
+            socialAccounts {
+              farcaster {
+                displayName
+                username
+              }
+              twitter {
+                displayName
+                username
+              }
+            }
+            vcFollowingStatus
+            followersInVcFollowing {
+              count
+            }
+            createdCoins(first: 100) {
+              edges {
+                node {
+                  name
+                  address
+                  marketCap
                 }
               }
             }
           }
         }
       }
+    }
+  }
+}
     `;
 
     try {

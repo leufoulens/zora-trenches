@@ -4,19 +4,13 @@
   "description": "Мониторинг новых создателей на Zora с уведомлениями в Telegram",
   "main": "dist/index.js",
   "scripts": {
+    "start": "ts-node src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
-    "watch": "nodemon --exec ts-node src/index.ts",
-    "test-x-api": "ts-node src/test-x-api.ts",
-    "test-farcaster": "ts-node src/test-farcaster.ts",
-    "test-buttons": "ts-node src/test-buttons.ts",
-    "test-zora-vc-following": "ts-node src/test.ts",
+    "test": "echo \"No tests available\" && exit 0",
     "test-alpha": "ts-node src/test-alpha.ts",
-    "test-apis": "npm run test-x-api && npm run test-farcaster",
-    "test-all": "npm run test-apis && npm run test-buttons",
-    "clear-cache": "node -e \"require('./dist/redis-client').RedisClient.prototype.clearProcessedAddresses()\"",
-    "test": "echo \"No tests available\" && exit 0"
+    "test-high-token": "ts-node src/test-high-token.ts",
+    "test-vc-followers": "ts-node src/test-vc-followers.ts"
   },
   "keywords": ["zora", "graphql", "telegram", "redis", "monitoring"],
   "author": "",

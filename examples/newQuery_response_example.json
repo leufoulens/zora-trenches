@@ -1,0 +1,2751 @@
+{
+    "data": {
+      "exploreList": {
+        "edges": [
+          {
+            "node": {
+              "address": "0x6c04bb692e67e2f7594923eccfd67863b55b8577",
+              "name": "haven1official",
+              "createdAt": "2025-07-30T15:50:25",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZjFmOWMzYTM1NzNmYTBlZTQ2ZQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "haven1official",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "Global Finance",
+                    "username": "ai_0xtrader"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x5e260f24e4ceb052455078e172219a47eb764fbc",
+              "name": "meloonverse",
+              "createdAt": "2025-07-30T15:49:25",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYWE1MGMxZWQyYTFjODMyZDNiMg==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "meloonverse",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "meloonverse",
+                    "username": "meloonverse"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x8c0efe9f8739eac3cc149947bad667fc01daaf03",
+              "name": "tmv",
+              "createdAt": "2025-07-30T15:49:21",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZWVmNjNmYjMzZWRlOGYwYTdlZA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "tmv",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x8f3d5a0645b1d3e16c25ece31df559ce47649c85",
+              "name": "xbt0x",
+              "createdAt": "2025-07-30T15:49:17",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZWVhM2E4ZjhhNDUxNDA4NTEwNw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "xbt0x",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x4df96da7b62de1099620157e84c8d72ea156b9fb",
+              "name": "loteraa",
+              "createdAt": "2025-07-30T15:48:57",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTU1OWMzYTM1NzNmYTBlZTQ2OQ==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "loteraa",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "richie",
+                    "username": "richieart_ng"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x49557c1fe68f6c284cc87a86eec9bca37a9d6b8e",
+              "name": "agnt_hub",
+              "createdAt": "2025-07-30T15:48:55",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZWJhNWVlYTM4YjlhZjFjZjljYg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "agnt_hub",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x967775698cc83e46e607e5b4575a09abb74b49c9",
+              "name": "0xnnvidia",
+              "createdAt": "2025-07-30T15:48:51",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZWQyNWMxODRlYjQzNGMzMGY0NQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "0xnnvidia",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x6013fdf3b569897746c18210a59e4756d70135e7",
+              "name": "girlsgotgame365",
+              "createdAt": "2025-07-30T15:48:47",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZWNhOTYwMDRhYWU5ODU3YjkyYQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "girlsgotgame365",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x721c839ad108d6df1a319e28d10160800fbc30bc",
+              "name": "seacreaturenft",
+              "createdAt": "2025-07-30T15:48:35",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZWE5ZmZlMzczM2ZlNTQyYzA5Ng==",
+                "followedEdges": {
+                  "count": 4
+                },
+                "username": "seacreaturenft",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "seacreaturenft",
+                    "username": "seacreature_nft"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x01a213e65cee00bdbb30905383277948f223b6fb",
+              "name": "zoraterminall",
+              "createdAt": "2025-07-30T15:48:33",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZWE3ZmZlMzczM2ZlNTQyYzA5Mw==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "zoraterminall",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "mateosalvini ❔",
+                    "username": "ahessxxx"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x211ea3f8acaf0d3a1ed79df8bc97970d3bbe502d",
+              "name": "trumplibertyf1",
+              "createdAt": "2025-07-30T15:48:31",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZGZhM2E4ZjhhNDUxNDA4NTBmYQ==",
+                "followedEdges": {
+                  "count": 3
+                },
+                "username": "trumplibertyf1",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "ALEX,VIJOR",
+                    "username": "Gogomentol"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x864cfc178764f613c265dc2b8dca92cfc87dc15f",
+              "name": "useril",
+              "createdAt": "2025-07-30T15:48:05",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTU4Yjc4M2E3ODhhNjI1MjQwNQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "useril",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x6af1c681f1a8d8892d34297f89c2fe07e9816ba9",
+              "name": "labulabubu",
+              "createdAt": "2025-07-30T15:48:03",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTllMGMxZWQyYTFjODMyZDNjOA==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "labulabubu",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x9ae137b5d486917f3d7155d0c76d529d7482aa84",
+              "name": "bytehatch",
+              "createdAt": "2025-07-30T15:47:55",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4ODc1ZTY4NDRhZGE0OGJlNmJmMjk1ZQ==",
+                "followedEdges": {
+                  "count": 26
+                },
+                "username": "bytehatch",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "byte hatch",
+                    "username": "bytehatch"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xc2416c26edcea9480400aa4354bc775ae424ca93",
+              "name": "p_p",
+              "createdAt": "2025-07-30T15:47:49",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTkzNjNmYjMzZWRlOGYwYTdlYQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "p_p",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xd2bb01c4bbc7b63cecc99fc7dfd6899e79a16667",
+              "name": "jiangxingchen2025",
+              "createdAt": "2025-07-30T15:47:47",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTczNDRhZGE0OGJlNmJmM2EwNQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "jiangxingchen2025",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "jiangxingchen🧪Building Alkanes",
+                    "username": "jybfln520"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xf61d4bfefb9eacd40a0ba75f6142e4e356694f97",
+              "name": "jadaaa",
+              "createdAt": "2025-07-30T15:47:43",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTkwOWI0MTEyMmRjNzZkMDg4OQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "jadaaa",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "so beautiful ",
+                        "address": "0x101d8597564c68cc40c073f46ba1d4f9cb8e78d7",
+                        "marketCap": "0"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x024d72ddc87c583d1cbfa44dd46e0866c4dc3077",
+              "name": "smartestmoney",
+              "createdAt": "2025-07-30T15:47:13",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzY2VkYzc3NDZiOTg4YTBkMGE1NQ==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "smartestmoney",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "smartestmoney.hl",
+                        "address": "0x9c3af391b1415041a093cb9d525a092d9e73ca53",
+                        "marketCap": "12.10"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x4c87f42e54d39783482f12d29fa68248db766b69",
+              "name": "xdashred",
+              "createdAt": "2025-07-30T15:47:09",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTM2NWVlYTM4YjlhZjFjZjljNw==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "xdashred",
+                "socialAccounts": {
+                  "farcaster": {
+                    "displayName": "Dashred",
+                    "username": "xdashred"
+                  },
+                  "twitter": {
+                    "displayName": "Dashred ⛩️",
+                    "username": "xdashred"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "GM ",
+                        "address": "0x0aad2a6fc3e35ce9e6620ed4dad4e8e6f0a4ec91",
+                        "marketCap": "14.34"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x622d6dc126fcd346dc0aebf11df1c158404651e2",
+              "name": "wesdeth",
+              "createdAt": "2025-07-30T15:47:09",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTZmYjc4M2E3ODhhNjI1MjQwOA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "wesdeth",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Ethereum’s Birthday Cake",
+                        "address": "0x403cde535d1268886af29ee588f83a0d89ae3f61",
+                        "marketCap": "12.05"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x21f0673ac7e2e7e148f97ed78c30fd3e208381fc",
+              "name": "humanbelaweb",
+              "createdAt": "2025-07-30T15:47:05",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZGVlZmZlMzczM2ZlNTQyYzA4Ng==",
+                "followedEdges": {
+                  "count": 5
+                },
+                "username": "humanbelaweb",
+                "socialAccounts": {
+                  "farcaster": {
+                    "displayName": "BELA",
+                    "username": "vitalikeths"
+                  },
+                  "twitter": {
+                    "displayName": "BelaWEB3 ⨀",
+                    "username": "humanbelaa"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x7203ebc2594a609d3f916b929fde6d5efa05ac61",
+              "name": "punk1325",
+              "createdAt": "2025-07-30T15:46:47",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTU0NjNmYjMzZWRlOGYwYTdlNQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "punk1325",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x15832fe5d834858b0f84d63557aa655bae36a1fa",
+              "name": "971",
+              "createdAt": "2025-07-30T15:46:27",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTMwM2FmZjdjYTQ4ZDVhY2MxMA==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "971",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x0d3a039ac73aa9df153440fe4256648e49b22ed5",
+              "name": "phnam24",
+              "createdAt": "2025-07-30T15:46:23",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTFlOWI0MTEyMmRjNzZkMDg4NA==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "phnam24",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "PhNam",
+                    "username": "phnam24"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x9e4390c8460156dc32b0b84b81e8fe6e09dbf9a2",
+              "name": "missingsalt",
+              "createdAt": "2025-07-30T15:46:07",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTJhNjNmYjMzZWRlOGYwYTdlMg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "missingsalt",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x92107e8e9b1da56e9c8c2f628486c71c5806e8ba",
+              "name": "fatosone",
+              "createdAt": "2025-07-30T15:46:07",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTE2M2E4ZjhhNDUxNDA4NTEwMg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "fatosone",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "Fatosone",
+                    "username": "FAtosone"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x198070d2d321967829bc071c65fd89a6b34a671f",
+              "name": "gakee",
+              "createdAt": "2025-07-30T15:46:01",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTBhMGMxZWQyYTFjODMyZDNjMQ==",
+                "followedEdges": {
+                  "count": 3
+                },
+                "username": "gakee",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "Eli ?",
+                    "username": "Doraarrb"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "untitled",
+                        "address": "0xc412040a8a279073e26d339da663eb34c0f29bd3",
+                        "marketCap": "12.26"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xb350c466ca264e2d2ae2b32df7f3e561f4f1ea6f",
+              "name": "rajendiran",
+              "createdAt": "2025-07-30T15:45:51",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTE2ZmZlMzczM2ZlNTQyYzA4ZQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "rajendiran",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x10f53eb98f94de6b14453d6bc54c0e43dff12faf",
+              "name": "uvuzy",
+              "createdAt": "2025-07-30T15:45:41",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZGYxOWI0MTEyMmRjNzZkMDg4MQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "uvuzy",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xbf5dcaf86920b66e421c303f98921709d38a7d15",
+              "name": "cloutxbt",
+              "createdAt": "2025-07-30T15:45:41",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTAzNjNmYjMzZWRlOGYwYTdkZQ==",
+                "followedEdges": {
+                  "count": 3
+                },
+                "username": "cloutxbt",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x70d64bce7f41dbcf52a9b23a63f1d850e5487806",
+              "name": "choly0",
+              "createdAt": "2025-07-30T15:45:35",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZTBjN2U0OGIzODZiN2NjOTM1Mg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "choly0",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x059d95e1e0bef6c67581b4daa615f3b84f8aec28",
+              "name": "montoya9477",
+              "createdAt": "2025-07-30T15:44:55",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZGU2M2E4ZjhhNDUxNDA4NTBmNw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "montoya9477",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x0154b6f553b173849068950a8907a3369111a651",
+              "name": "umbrel",
+              "createdAt": "2025-07-30T15:44:55",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZGNmNWMxODRlYjQzNGMzMGYzMg==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "umbrel",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xfbaab909b573581cc30baa13e09f760471030a72",
+              "name": "imaginary_ones",
+              "createdAt": "2025-07-30T15:44:49",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZGRiNjNmYjMzZWRlOGYwYTdkYg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "imaginary_ones",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x90ffee2463ec8c9a62eee56fdaa704805a3cf6de",
+              "name": "size",
+              "createdAt": "2025-07-30T15:44:45",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzM5ZDk1MGY0NTcwNjk2NjU1ZA==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "size",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x32b381f59374b761a59d5cd5233562c026156891",
+              "name": "1dot",
+              "createdAt": "2025-07-30T15:44:39",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZGQxNWMxODRlYjQzNGMzMGYzNQ==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "1dot",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Do you know how important this “ . “",
+                        "address": "0x23a13a1fb76ff57dfd4aa469611b0020ae9df0bb",
+                        "marketCap": "12.14"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xe2b35c21b68594a0b537d640210a75014d176b89",
+              "name": "babymanyu",
+              "createdAt": "2025-07-30T15:44:31",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZGE3NWVlYTM4YjlhZjFjZjljMg==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "babymanyu",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x6c17f28b86f41380ada6a46d8e28a8b44e7dd198",
+              "name": "neverpay",
+              "createdAt": "2025-07-30T15:43:57",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDc2NWMxODRlYjQzNGMzMGYyYw==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "neverpay",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x08cd7e13a18549ed7cabf1fbf96c35573822bb43",
+              "name": "luffycrypto2022",
+              "createdAt": "2025-07-30T15:43:55",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDk0ZDk1MGY0NTcwNjk2NjU2Mw==",
+                "followedEdges": {
+                  "count": 3
+                },
+                "username": "luffycrypto2022",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "Luffy_Crypto",
+                    "username": "luffycrypto2022"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xc7a39bc75a11c9befe2d8b87672b1283bfd671b5",
+              "name": "dragonpow",
+              "createdAt": "2025-07-30T15:43:49",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDlkY2VkZTBhMTU5ZTRkODQ5Mw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "dragonpow",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x43d3fe9c67192a454a55dfdbc7f6b307f2ddf765",
+              "name": "oxbryte",
+              "createdAt": "2025-07-30T15:43:47",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY3ZTA3ZTZkYjFiOWRjMThmOTFjNTg5Zg==",
+                "followedEdges": {
+                  "count": 13
+                },
+                "username": "oxbryte",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xd88139613a6687221aae33f2a337f2a33a44577a",
+              "name": "krawuzi",
+              "createdAt": "2025-07-30T15:43:33",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDkyNWMxODRlYjQzNGMzMGYyZg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "krawuzi",
+                "socialAccounts": {
+                  "farcaster": {
+                    "displayName": "K+",
+                    "username": "krawuzl"
+                  },
+                  "twitter": {
+                    "displayName": "krawuzl",
+                    "username": "Krawuzl_eth"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x93da25a12450f070396d74899a170e87c7b58984",
+              "name": "a16zzora",
+              "createdAt": "2025-07-30T15:43:13",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY2YjY1YTc5MDE1MDNjZGVlNjVhNGJmMA==",
+                "followedEdges": {
+                  "count": 735
+                },
+                "username": "a16zzora",
+                "socialAccounts": {
+                  "farcaster": {
+                    "displayName": "Reksa🎩",
+                    "username": "reksa"
+                  },
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "ELYSIA",
+                        "address": "0x9a65c7f7dd004d6292824fda47dbd416dc194bc6",
+                        "marketCap": "25.81"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "PANIC - PlayerAlpha #3956",
+                        "address": "0xf142297b3737da8842c698ff80357897ec001b1d",
+                        "marketCap": "24.89"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "PANIC - AROUND THE WORLD",
+                        "address": "0x7e7f970d3ba9912affe1b790f3c503a8c766f7bb",
+                        "marketCap": "24.89"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "PANIC - Bias towards Building",
+                        "address": "0x95b38e3b13c499204ad7b4bc89120c2ce25b6a67",
+                        "marketCap": "24.87"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "PANIC - Words3 Launch Collectible",
+                        "address": "0x52c27e1b910f474fa2c295ad7fecb68869ed640d",
+                        "marketCap": "26.17"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "MSBREW",
+                        "address": "0xfbe2221d08bf7c018bae374eecf5102d4d119289",
+                        "marketCap": "26.31"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "DivaX SEXY",
+                        "address": "0xa4edc750cfa4310747a22d1d898c42a5a8abebcf",
+                        "marketCap": "26.38"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "ANGELICA",
+                        "address": "0xeaa652ae3c93ebc830f6b6b3a29579a0fc1cb83b",
+                        "marketCap": "25.14"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "GLOOF",
+                        "address": "0xd7bc115ab6abdf0a233b4cc3e4c3c507882179aa",
+                        "marketCap": "21.99"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "VibraCoin",
+                        "address": "0xa9dd349a298c6e05ea8d3766b31b652a481d0958",
+                        "marketCap": "24.91"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "Shmoink",
+                        "address": "0x928964f952fb22cd6d549bd236a2b23f30c70486",
+                        "marketCap": "22.60"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "WILD",
+                        "address": "0xdeb0f1aa0c14e75ee46d3a5bbd22af46c3fcf5cd",
+                        "marketCap": "22.74"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "Zebaccus",
+                        "address": "0xe54f123ef73e592eccc1aaf94b17bc693ac02eba",
+                        "marketCap": "34.51"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "VIPERVENOM",
+                        "address": "0x45cb1af8d928636054bff1d81c247468d8508a28",
+                        "marketCap": "22.28"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "CLANKERMOON",
+                        "address": "0x44e3e27cf3f2cd974470883d99552cd5548bf4ea",
+                        "marketCap": "22.28"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xab0cfa59173bb7d3b80ccd08e0886e882cc70b3e",
+              "name": "almustapha44",
+              "createdAt": "2025-07-30T15:43:09",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDc3Y2VkZTBhMTU5ZTRkODQ5MA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "almustapha44",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Clifford ",
+                        "address": "0x1a6c89f42534e564330b629bdc854eb4611174f6",
+                        "marketCap": "12.19"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x96c4b9ab96fdda4ea65a1f4dd41b481978975d10",
+              "name": "idkwho",
+              "createdAt": "2025-07-30T15:43:03",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDc2Yzc3NDZiOTg4YTBkMGE1Yg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "idkwho",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xc6999dbc2ee9c54c82ed72d7f5a03d779db813b3",
+              "name": "catpum",
+              "createdAt": "2025-07-30T15:42:55",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDYwM2E4ZjhhNDUxNDA4NTBmMw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "catpum",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x4febb802443701fdcac103a937c42e9b3342da08",
+              "name": "apecoins",
+              "createdAt": "2025-07-30T15:42:51",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDQwN2U0OGIzODZiN2NjOTM0ZA==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "apecoins",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xa72484530a296775c2d48528c32378aa6c433ca4",
+              "name": "manluk",
+              "createdAt": "2025-07-30T15:42:41",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDVlM2FmZjdjYTQ4ZDVhY2MwZA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "manluk",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Thisert",
+                        "address": "0x6f00bd783c9804979753937ed066707e34c43209",
+                        "marketCap": "12.21"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x1dd483609136569fb20b646975062ba717975b4c",
+              "name": "bitmartbankr",
+              "createdAt": "2025-07-30T15:42:39",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDVhY2VkZTBhMTU5ZTRkODQ4ZA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "bitmartbankr",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x233cbfa55d1c15dd0c9b35bf89753ed1e6417c3d",
+              "name": "nibiru",
+              "createdAt": "2025-07-30T15:42:13",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDQ0M2FmZjdjYTQ4ZDVhY2MwYQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "nibiru",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x488a6e9e6f013aeb4466f729f0c73913dd275f1d",
+              "name": "unionbuild",
+              "createdAt": "2025-07-30T15:41:59",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzY2VmYzc3NDZiOTg4YTBkMGE1OA==",
+                "followedEdges": {
+                  "count": 3
+                },
+                "username": "unionbuild",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x918f0a9d78f819b69fe1b5c7303b54121a64dfec",
+              "name": "indahlove",
+              "createdAt": "2025-07-30T15:41:51",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDJhNjNmYjMzZWRlOGYwYTdkNw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "indahlove",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Love love😍",
+                        "address": "0x6287f6eb5d5e3bc2e1c62b48c099247a77ec4636",
+                        "marketCap": "12.19"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xfc30e3966c3769ef017bd7596aa24c5ceab09013",
+              "name": "chichca",
+              "createdAt": "2025-07-30T15:41:27",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDE1N2U0OGIzODZiN2NjOTM0OQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "chichca",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Dog stick",
+                        "address": "0x11fee97aa59b7d2b0a7254023ff0ae3ddf6bc1c7",
+                        "marketCap": "12.13"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "Matcha",
+                        "address": "0xee645dacb4cc5021113cc0feceadb959bd9d9262",
+                        "marketCap": "12.16"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x6e792ed6a51573cbf02a15b5d74d3e2c3ea563ff",
+              "name": "kohi_universe",
+              "createdAt": "2025-07-30T15:41:23",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzhlY2VkZTBhMTU5ZTRkODQ4OQ==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "kohi_universe",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x18279f25878bd31c703975b431bacc4e3c99d210",
+              "name": "spoengbob11175",
+              "createdAt": "2025-07-30T15:41:23",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzdkN2U0OGIzODZiN2NjOTM0Mw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "spoengbob11175",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x2c3ec9f8a1f357577e147ada0bfafe75edf8ece0",
+              "name": "fcqj",
+              "createdAt": "2025-07-30T15:41:11",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzY2VlOWI0MTEyMmRjNzZkMDg3Yw==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "fcqj",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "Dori🧡",
+                    "username": "fcqjfcqj"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "doodle",
+                        "address": "0x16eb2d6a1a9cfaa780470e59edbae195df41a626",
+                        "marketCap": "12.24"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x64da3dd2fd01093800b87a1f7160e7071fd43f01",
+              "name": "erfa",
+              "createdAt": "2025-07-30T15:41:09",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzY2U1OWMzYTM1NzNmYTBlZTQ2NA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "erfa",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x1a71d779d63993e6bdcabbd78ed4a8f5f05b5ff2",
+              "name": "drippyz",
+              "createdAt": "2025-07-30T15:41:09",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzZDAzN2U0OGIzODZiN2NjOTM0Ng==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "drippyz",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x6d5b7648921a8fc84770fc7b137012b2ac1686a2",
+              "name": "sekerkop",
+              "createdAt": "2025-07-30T15:40:53",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzY2YyNDRhZGE0OGJlNmJmM2EwMA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "sekerkop",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "maknet",
+                    "username": "maknetbaik"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "sekerkoppp",
+                        "address": "0xebd036c090b83fc761879fa9bcf46373bc35bcc4",
+                        "marketCap": "0"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xfb4fade5f2e715615b41d20d471712dbd60135fe",
+              "name": "xoxosamanthanicole",
+              "createdAt": "2025-07-30T15:40:31",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzY2UxYjc4M2E3ODhhNjI1MjQwMA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "xoxosamanthanicole",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "cute",
+                        "address": "0x34974ddd5652e22667cd3f605d85a9f0dcbd68f7",
+                        "marketCap": "12.12"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "nature",
+                        "address": "0x8af10c505f978d8f5f3cc12debb5550fd41b73ca",
+                        "marketCap": "0"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "lilies",
+                        "address": "0x4102dea4cd5ac5a1800e0b36a1ac8a425d84dd13",
+                        "marketCap": "12.19"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "orchids",
+                        "address": "0x16a6af02b49edafa100157e0435fc2661a8f4ab3",
+                        "marketCap": "0"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "flowers",
+                        "address": "0x788ce05ab8bff3ee5854ae6174e925ff846c1815",
+                        "marketCap": "12.21"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "trash in miami",
+                        "address": "0x12ea20b0b13d7a0a4f83f87b6bb9e09d24144cc6",
+                        "marketCap": "0"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x8c3b95bb5a0e30dc12dcdee2d20533d4fe9b2621",
+              "name": "nocontextfooty",
+              "createdAt": "2025-07-30T15:40:21",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4ODkwNTk5NDRhZGE0OGJlNmJmMzJjOQ==",
+                "followedEdges": {
+                  "count": 79
+                },
+                "username": "nocontextfooty",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xa8df01ac10dfa80f80cf51787c20f1d7f879abb7",
+              "name": "coolcatts",
+              "createdAt": "2025-07-30T15:40:15",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzY2M2Yzc3NDZiOTg4YTBkMGE1Mg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "coolcatts",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xd70c217282e9f622ceac4dfa653cbab9a0fa51e4",
+              "name": "mempool",
+              "createdAt": "2025-07-30T15:40:13",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzliNDRhZGE0OGJlNmJmMzlmYQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "mempool",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x586a8b0194d7d107e2bd227a626e712eb1e57278",
+              "name": "semar",
+              "createdAt": "2025-07-30T15:40:09",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4ODk5NDI1M2E4ZjhhNDUxNDA4NGRlYQ==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "semar",
+                "socialAccounts": {
+                  "farcaster": {
+                    "displayName": "Semar10",
+                    "username": "semar10"
+                  },
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Iron Pulse",
+                        "address": "0x944b64207af610a0a56f7745c82b91df359dfc12",
+                        "marketCap": "12.54"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "The Heart of the Machine",
+                        "address": "0x4dfb86e300eafe8d7cb3fe02612394760f0af503",
+                        "marketCap": "12.50"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xa3f37ff00da01f9fda4ee6dc202cff0505a57282",
+              "name": "midasbao",
+              "createdAt": "2025-07-30T15:40:03",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY2YTI3NmVjYTM1NDc1N2U5MmJhNjQ0Mg==",
+                "followedEdges": {
+                  "count": 6
+                },
+                "username": "midasbao",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "0xBao (天宝)",
+                    "username": "0xBao_"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x3c76722d87d5e42a313f19045aaab1a4907272c9",
+              "name": "baszora",
+              "createdAt": "2025-07-30T15:39:49",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzY2FiOWMzYTM1NzNmYTBlZTQ2MQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "baszora",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Vbase",
+                        "address": "0x803b0b161e48cadbb4ac7703bafeeffcb41a1710",
+                        "marketCap": "0"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x635dc7338427f08a8ada4f11026ec9b5c7ad175c",
+              "name": "coti",
+              "createdAt": "2025-07-30T15:39:21",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzFiOWI0MTEyMmRjNzZkMDg3NA==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "coti",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "COTI AI Agents",
+                    "username": "coaiagents"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "$COTI x $ZORA",
+                        "address": "0x842c646f1b3fce496a572d111f90c6630a0637d9",
+                        "marketCap": "0"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x66e98de103eac96e12d2b0a9bdac372807b60078",
+              "name": "marketz",
+              "createdAt": "2025-07-30T15:39:11",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzdkOWMzYTM1NzNmYTBlZTQ1ZQ==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "marketz",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xb52e250fd183dcf1f79af5239d488b18506e0bcf",
+              "name": "thelostchannel",
+              "createdAt": "2025-07-30T15:39:09",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzJlYjc4M2E3ODhhNjI1MjNmYw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "thelostchannel",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "CryptoJ 🥷🏻",
+                    "username": "CryptoJverse"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x8af4e52cc2d4f0e393272f10b5a10333200f4e5a",
+              "name": "wildflr",
+              "createdAt": "2025-07-30T15:39:07",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY1YzUyYThiYzAxMGFmZjNlMWQ1Mjk1MA==",
+                "followedEdges": {
+                  "count": 56
+                },
+                "username": "wildflr",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "Wildflower Fields",
+                    "username": "wildy_martinez"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Power",
+                        "address": "0x1b1a5aa0c0e7df7a7034e6dfe08219ef382f9c6f",
+                        "marketCap": "15.67"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xfbfaef5ae160ed98ebbad647a7ce5dad6e5c297a",
+              "name": "bolding",
+              "createdAt": "2025-07-30T15:38:49",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYjQ0Y2VkZTBhMTU5ZTRkODQ3OA==",
+                "followedEdges": {
+                  "count": 3
+                },
+                "username": "bolding",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x75f58a5780351c4d9d8fdeb87860cce47c52f36b",
+              "name": "swirdgirls",
+              "createdAt": "2025-07-30T15:38:39",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzZlOWI0MTEyMmRjNzZkMDg3OA==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "swirdgirls",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "adreena 🤝PAL",
+                    "username": "swirldaisies"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Swirldgirls",
+                        "address": "0x072f7ff25b761b3345057887ae9b477fcb442d92",
+                        "marketCap": "0"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xa6913fd1e4ebabf74b749287fb2ad144fa31d2ec",
+              "name": "kimicimi",
+              "createdAt": "2025-07-30T15:38:35",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzY5ZmZlMzczM2ZlNTQyYzA3Yg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "kimicimi",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x97c04af299edb15ce71a9c2408603a021643036b",
+              "name": "driphausfaundation",
+              "createdAt": "2025-07-30T15:38:23",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4ODhmYjI3M2E4ZjhhNDUxNDA4NGEwNA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "driphausfaundation",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "Drip Haus Foundation",
+                    "username": "DripHausFN"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "10th ETH",
+                        "address": "0xb7b0a4890610b68f566ebcf567c1ff0d7526851a",
+                        "marketCap": "12.17"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x5b22256b44507fd60712595653cef719ee71bbf3",
+              "name": "kermittheforg",
+              "createdAt": "2025-07-30T15:37:49",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYjY3ZDk1MGY0NTcwNjk2NjU1OA==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "kermittheforg",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x1861c947c1807f6610f5a2f3662a5f273b4f14dc",
+              "name": "leddie",
+              "createdAt": "2025-07-30T15:37:49",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzMwNjNmYjMzZWRlOGYwYTdkMw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "leddie",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xfb82964b502efc3a7d237274f95a692c64bdab36",
+              "name": "neloy07",
+              "createdAt": "2025-07-30T15:37:37",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzAxM2E4ZjhhNDUxNDA4NTBlYw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "neloy07",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Somewhere in japan.",
+                        "address": "0x630c6b4d89c3cff38af98401e8f1f1d8a1290f7c",
+                        "marketCap": "12.18"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x0a1a4da88cf47a458f15874535a6ef2ce00352c4",
+              "name": "nochillionaire",
+              "createdAt": "2025-07-30T15:37:25",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzIxYzc3NDZiOTg4YTBkMGE0Zg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "nochillionaire",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Nochillio",
+                        "address": "0xb142301cb779a9d668d48143a16008e66c53645c",
+                        "marketCap": "0"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xc9b4ad4528a72cf4259a6f445ee25d0815baf825",
+              "name": "newspaperbirds",
+              "createdAt": "2025-07-30T15:37:23",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY3ZmY5YzgwNDQ2ODkyMDFhOWVjNDU0Yw==",
+                "followedEdges": {
+                  "count": 9
+                },
+                "username": "newspaperbirds",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "Artem Hordieiev",
+                    "username": "ArtHordieiev"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "🟣 Artifact of Corporeality",
+                        "address": "0x95a87d26fb59631459c79dcdae19b4f3de525d56",
+                        "marketCap": "21.98"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "Start to getting closer ",
+                        "address": "0xaab0e7f3ac2f5c48a9207636a26a1cdc4a7da171",
+                        "marketCap": "22.03"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x1011ad05ea27ca283952efb33c0f6d7684247276",
+              "name": "bolognese",
+              "createdAt": "2025-07-30T15:37:19",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzFlMGMxZWQyYTFjODMyZDNiZA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "bolognese",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x96abff60b3dbe59fd656eaefa546cbe9ea298454",
+              "name": "vladasha",
+              "createdAt": "2025-07-30T15:37:17",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzE5Y2VkZTBhMTU5ZTRkODQ4NQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "vladasha",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x8e8159ca2a0ed6da02c7eb7f7d7898f021cd9bc6",
+              "name": "axnf0",
+              "createdAt": "2025-07-30T15:37:09",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY2MWFiMGU4M2NhZjk4YmFmYjAzMDdmMw==",
+                "followedEdges": {
+                  "count": 113
+                },
+                "username": "axnf0",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "AXNF0 (✸,✸) 🐐",
+                    "username": "JoseCarlos89780"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x26c59c18f9689f716ff1b19b95a1fe1c58356bce",
+              "name": "pelymon",
+              "createdAt": "2025-07-30T15:37:03",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYjA1Yjc4M2E3ODhhNjI1MjNmNw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "pelymon",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "Rendy Nugraha",
+                    "username": "Rendy530"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "this cat is CHONKY",
+                        "address": "0x66d519740c0d8b481e83509039e712e808a68521",
+                        "marketCap": "12.18"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "venis planet",
+                        "address": "0x15c7c15db0d270353e1ea80145aa1a7163282ff7",
+                        "marketCap": "0"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "psyop",
+                        "address": "0xfa130bb17cdc5b9cb4acd2b51859a09fb9bc5565",
+                        "marketCap": "0"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "dragon dick",
+                        "address": "0xe3a76cae82e43b397d07afdaf685f25dda9899e3",
+                        "marketCap": "12.17"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "wobbly wiggly",
+                        "address": "0xa24b1a10f71ce4b7f3a573f4411533926e6f0da6",
+                        "marketCap": "0"
+                      }
+                    },
+                    {
+                      "node": {
+                        "name": "miao",
+                        "address": "0xe8105fbe27bf2c93b25b9ffee9c157f17fbca684",
+                        "marketCap": "0"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x032305ecad3ea0047404658cb37d5ab2ff6e20b9",
+              "name": "ethirum",
+              "createdAt": "2025-07-30T15:37:03",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYmY0NWMxODRlYjQzNGMzMGYyMg==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "ethirum",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xd0329308bcf10d13e80e654b4f1d338d750b0323",
+              "name": "nonfungible",
+              "createdAt": "2025-07-30T15:37:03",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYzA5OWI0MTEyMmRjNzZkMDg3MQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "nonfungible",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Edinburgh 5.32am",
+                        "address": "0x48fa557cab52ed38c04e75c49c94b84dcf2b7349",
+                        "marketCap": "12.19"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x2d536e4fb0ffb106b59e2fdd035328ce01d096f3",
+              "name": "moonpapi",
+              "createdAt": "2025-07-30T15:36:57",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYmU2M2FmZjdjYTQ4ZDVhY2MwMw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "moonpapi",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x390ee53d707147eeed6351e4da84d22857cbbbb5",
+              "name": "alexamendes",
+              "createdAt": "2025-07-30T15:36:55",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY2NzA2NTE1MmM2MGZlMzE4NWFmZjM3NQ==",
+                "followedEdges": {
+                  "count": 26
+                },
+                "username": "alexamendes",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "Alexa Mendes",
+                    "username": "alexa_mende"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xb0ab8965222a015201b756cf01f05c8cc1b58a92",
+              "name": "maurimix",
+              "createdAt": "2025-07-30T15:36:47",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY1OTljYWY2ZmNjODg4MzFmOWY4ZDM5OA==",
+                "followedEdges": {
+                  "count": 16
+                },
+                "username": "maurimix",
+                "socialAccounts": {
+                  "farcaster": {
+                    "displayName": "Mauricio Ostos",
+                    "username": "mauricio"
+                  },
+                  "twitter": {
+                    "displayName": "Mauricio Ostos",
+                    "username": "mauricioostos"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xbc18c3d24c88ee60ce727712656a26261044e4e6",
+              "name": "nehharshah",
+              "createdAt": "2025-07-30T15:36:37",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY1Y2NmNjQ5ODU0YzM5OTg1NmM0YzhlOQ==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "nehharshah",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "NYC skyline",
+                        "address": "0x6cc00854dc04b34cdd2b5dec5753526c0a731d9b",
+                        "marketCap": "12.18"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xb076e217e4f3911a2ac93dac56188d5d8e871360",
+              "name": "consoledao",
+              "createdAt": "2025-07-30T15:36:29",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGExMGNkNWVlYTM4YjlhZjFjZjhjNw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "consoledao",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xb4fa524983075df8d5b8b92f2a911a377a3968be",
+              "name": "aaxc",
+              "createdAt": "2025-07-30T15:36:29",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYmVlM2E4ZjhhNDUxNDA4NTBlOA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "aaxc",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "⭐️",
+                        "address": "0x4c14c45605bd42871f8f6b8f94864fecca15840a",
+                        "marketCap": "0"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x05eacb910dae229e1bb4fdc7e4dd272872f7a810",
+              "name": "bigolnuggets",
+              "createdAt": "2025-07-30T15:36:23",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYmU4N2U0OGIzODZiN2NjOTMzZg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "bigolnuggets",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x9ab2a6bbbef506cb85f83d89b1b748b0f2696930",
+              "name": "2ndpower",
+              "createdAt": "2025-07-30T15:36:07",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYmQ3Y2VkZTBhMTU5ZTRkODQ4Mg==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "2ndpower",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "The good life",
+                        "address": "0xc6b2c73688ce0ffad12b19eb808df28df0e1ecf2",
+                        "marketCap": "12.19"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xd246f6044918b87981febfbbb3d9280ed552fdce",
+              "name": "robertpreoteasa",
+              "createdAt": "2025-07-30T15:35:21",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY3ZDliZWE5OGFmNDEyYjk3Y2NlYTRmMQ==",
+                "followedEdges": {
+                  "count": 12
+                },
+                "username": "robertpreoteasa",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "Robert Preoteasa",
+                    "username": "robertpreoteasa"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xd2c5eeab715272693cd8f2f3761a2fa7a5091cba",
+              "name": "cloutedmind",
+              "createdAt": "2025-07-30T15:35:15",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYjc2Y2VkZTBhMTU5ZTRkODQ3ZQ==",
+                "followedEdges": {
+                  "count": 1
+                },
+                "username": "cloutedmind",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Strategy in somETHing",
+                        "address": "0xbd067ec812a9eac4137b6299e46ed6d24bc2b6d2",
+                        "marketCap": "154.01"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x6b2bfa529e89fe9d107d2f9342bab1227800d700",
+              "name": "hiromaru",
+              "createdAt": "2025-07-30T15:34:59",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYjk0MGMxZWQyYTFjODMyZDNiOA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "hiromaru",
+                "socialAccounts": {
+                  "farcaster": {
+                    "displayName": "Hiro",
+                    "username": "h1r0m4ru"
+                  },
+                  "twitter": {
+                    "displayName": "Hiro (h1r0m4ru.farcaster.eth)",
+                    "username": "Albertfd1999"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x3ca32f23f6409aacd8458e7857007a2bb955c242",
+              "name": "rugradio",
+              "createdAt": "2025-07-30T15:34:59",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYjhjOTYwMDRhYWU5ODU3YjkxYQ==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "rugradio",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xfb928283c94af97ec277e6694d7831a94088155f",
+              "name": "velucas",
+              "createdAt": "2025-07-30T15:34:57",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYjhiOWMzYTM1NzNmYTBlZTQ1Nw==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "velucas",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0x6abb3956faa56b1f5dd55ae3576f95e9d88bd6b8",
+              "name": "gudangguram",
+              "createdAt": "2025-07-30T15:34:57",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYTJhNjNmYjMzZWRlOGYwYTdjNA==",
+                "followedEdges": {
+                  "count": 0
+                },
+                "username": "gudangguram",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": {
+                    "displayName": "gudanggram",
+                    "username": "gudanggram58540"
+                  }
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": []
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "address": "0xe8e5b3da7ef87bc6d1a9fb099f56dc2f16ec16a9",
+              "name": "rezakt94",
+              "createdAt": "2025-07-30T15:34:53",
+              "creatorProfile": {
+                "id": "R3JhcGhRTEFjY291bnRQcm9maWxlOjY4OGEzYjhhYzc3NDZiOTg4YTBkMGE0Yg==",
+                "followedEdges": {
+                  "count": 2
+                },
+                "username": "rezakt94",
+                "socialAccounts": {
+                  "farcaster": null,
+                  "twitter": null
+                },
+                "vcFollowingStatus": "UNKNOWN",
+                "createdCoins": {
+                  "edges": [
+                    {
+                      "node": {
+                        "name": "Aang",
+                        "address": "0x97dfc5c40a730a2a60fe56ccf2ffb83f750ae60c",
+                        "marketCap": "0"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }

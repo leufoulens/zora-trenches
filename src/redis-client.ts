@@ -116,4 +116,58 @@ export class RedisClient {
       return 0;
     }
   }
+
+  // Twitter blacklist management methods
+  private readonly TWITTER_BLACKLIST_KEY = 'zora:twitter_blacklist';
+
+  async addToTwitterBlacklist(usernames: string[]): Promise<number> {
+    try {
+      const normalizedUsernames = usernames.map(u => u.toLowerCase().trim());
+      const result = await this.client.sAdd(this.TWITTER_BLACKLIST_KEY, normalizedUsernames);
+      return result;
+    } catch (error) {
+      console.error('Error adding to twitter blacklist:', error);
+      return 0;
+    }
+  }
+
+  async removeFromTwitterBlacklist(username: string): Promise<boolean> {
+    try {
+      const normalizedUsername = username.toLowerCase().trim();
+      const result = await this.client.sRem(this.TWITTER_BLACKLIST_KEY, normalizedUsername);
+      return result > 0;
+    } catch (error) {
+      console.error('Error removing from twitter blacklist:', error);
+      return false;
+    }
+  }
+
+  async isInTwitterBlacklist(username: string): Promise<boolean> {
+    try {
+      const normalizedUsername = username.toLowerCase().trim();
+      return await this.client.sIsMember(this.TWITTER_BLACKLIST_KEY, normalizedUsername);
+    } catch (error) {
+      console.error('Error checking twitter blacklist:', error);
+      return false;
+    }
+  }
+
+  async getTwitterBlacklist(): Promise<string[]> {
+    try {
+      const members = await this.client.sMembers(this.TWITTER_BLACKLIST_KEY);
+      return members.sort();
+    } catch (error) {
+      console.error('Error getting twitter blacklist:', error);
+      return [];
+    }
+  }
+
+  async getTwitterBlacklistCount(): Promise<number> {
+    try {
+      return await this.client.sCard(this.TWITTER_BLACKLIST_KEY);
+    } catch (error) {
+      console.error('Error getting twitter blacklist count:', error);
+      return 0;
+    }
+  }
 } 

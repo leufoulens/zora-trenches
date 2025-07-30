@@ -1,5 +1,5 @@
 import TelegramBot from 'node-telegram-bot-api';
-import { Creator, InlineKeyboardMarkup } from './types';
+import { Creator, InlineKeyboardMarkup, InlineKeyboardButton, CreatedCoin } from './types';
 import { config } from './config';
 import { XApiClient } from './x-api-client';
 import { FarcasterClient } from './farcaster-client';
@@ -128,6 +128,153 @@ export class TelegramClient {
         await this.bot.sendMessage(chatId, 'Ошибка при удалении из alpha list');
       }
     });
+
+    // Command: /add_twitter_blacklist
+    this.bot.onText(/\/add_twitter_blacklist(?:\s+(.+))?/, async (msg, match) => {
+      const chatId = msg.chat.id;
+      const usernames = match?.[1];
+
+      if (!usernames) {
+        await this.bot.sendMessage(chatId, 
+          'Использование: /add_twitter_blacklist username1 username2 username3\n' +
+          'Пример: /add_twitter_blacklist baduser1 spammer2 scammer3'
+        );
+        return;
+      }
+
+      const usernameList = usernames.split(/\s+/).filter(u => u.trim());
+      if (usernameList.length === 0) {
+        await this.bot.sendMessage(chatId, 'Необходимо указать хотя бы один Twitter username');
+        return;
+      }
+
+      try {
+        const addedCount = await this.redisClient.addToTwitterBlacklist(usernameList);
+        const totalCount = await this.redisClient.getTwitterBlacklistCount();
+        
+        await this.bot.sendMessage(chatId, 
+          `🚫 Добавлено ${addedCount} новых Twitter аккаунтов в blacklist\n` +
+          `Общее количество: ${totalCount}\n\n` +
+          `Добавленные Twitter usernames:\n${usernameList.map(u => `• @${u}`).join('\n')}`
+        );
+      } catch (error) {
+        console.error('Error in add_twitter_blacklist command:', error);
+        await this.bot.sendMessage(chatId, 'Ошибка при добавлении в Twitter blacklist');
+      }
+    });
+
+    // Command: /twitter_blacklist
+    this.bot.onText(/\/twitter_blacklist/, async (msg) => {
+      const chatId = msg.chat.id;
+
+      try {
+        const blacklist = await this.redisClient.getTwitterBlacklist();
+        
+        if (blacklist.length === 0) {
+          await this.bot.sendMessage(chatId, 'Twitter blacklist пуст');
+          return;
+        }
+
+        const message = `🚫 Twitter Blacklist (${blacklist.length} аккаунтов):\n\n` +
+          blacklist.map((username, index) => `${index + 1}. @${username}`).join('\n');
+
+        // Split message if too long (Telegram limit)
+        if (message.length > 4000) {
+          const chunks = this.splitMessage(message, 4000);
+          for (const chunk of chunks) {
+            await this.bot.sendMessage(chatId, chunk);
+          }
+        } else {
+          await this.bot.sendMessage(chatId, message);
+        }
+      } catch (error) {
+        console.error('Error in twitter_blacklist command:', error);
+        await this.bot.sendMessage(chatId, 'Ошибка при получении Twitter blacklist');
+      }
+    });
+
+    // Command: /remove_twitter_blacklist
+    this.bot.onText(/\/remove_twitter_blacklist(?:\s+(.+))?/, async (msg, match) => {
+      const chatId = msg.chat.id;
+      const username = match?.[1]?.trim();
+
+      if (!username) {
+        await this.bot.sendMessage(chatId, 
+          'Использование: /remove_twitter_blacklist username\n' +
+          'Пример: /remove_twitter_blacklist baduser1'
+        );
+        return;
+      }
+
+      try {
+        const removed = await this.redisClient.removeFromTwitterBlacklist(username);
+        const totalCount = await this.redisClient.getTwitterBlacklistCount();
+        
+        if (removed) {
+          await this.bot.sendMessage(chatId, 
+            `✅ Twitter аккаунт @${username} удален из blacklist\n` +
+            `Осталось аккаунтов: ${totalCount}`
+          );
+        } else {
+          await this.bot.sendMessage(chatId, 
+            `❌ Twitter аккаунт @${username} не найден в blacklist`
+          );
+        }
+      } catch (error) {
+        console.error('Error in remove_twitter_blacklist command:', error);
+        await this.bot.sendMessage(chatId, 'Ошибка при удалении из Twitter blacklist');
+      }
+    });
+
+    // Callback handler for blacklist Twitter button
+    this.bot.on('callback_query', async (callbackQuery) => {
+      const chatId = callbackQuery.message?.chat.id;
+      const messageId = callbackQuery.message?.message_id;
+      const data = callbackQuery.data;
+
+      if (!chatId || !messageId || !data) return;
+
+      if (data.startsWith('blacklist_twitter:')) {
+        const twitterUsername = data.split(':')[1];
+        
+        try {
+          // Check if already in blacklist
+          const isAlreadyBlacklisted = await this.redisClient.isInTwitterBlacklist(twitterUsername);
+          
+          if (isAlreadyBlacklisted) {
+            await this.bot.answerCallbackQuery(callbackQuery.id, {
+              text: `@${twitterUsername} уже в blacklist`,
+              show_alert: true
+            });
+            return;
+          }
+
+          // Add to blacklist
+          await this.redisClient.addToTwitterBlacklist([twitterUsername]);
+          const totalCount = await this.redisClient.getTwitterBlacklistCount();
+
+          // Send confirmation message
+          await this.bot.sendMessage(chatId, 
+            `🚫 Twitter аккаунт @${twitterUsername} добавлен в blacklist\n` +
+            `Всего в blacklist: ${totalCount} аккаунтов`
+          );
+
+          // Answer callback query
+          await this.bot.answerCallbackQuery(callbackQuery.id, {
+            text: `@${twitterUsername} добавлен в blacklist`,
+            show_alert: false
+          });
+
+          console.log(`Twitter @${twitterUsername} added to blacklist via button`);
+        } catch (error) {
+          console.error('Error in blacklist_twitter callback:', error);
+          await this.bot.answerCallbackQuery(callbackQuery.id, {
+            text: 'Ошибка при добавлении в blacklist',
+            show_alert: true
+          });
+        }
+      }
+    });
   }
 
   private splitMessage(message: string, maxLength: number): string[] {
@@ -196,9 +343,30 @@ export class TelegramClient {
     }
   }
 
+  private getMaxMarketCapToken(creator: Creator): { token: CreatedCoin; marketCap: number } | null {
+    if (!creator.creatorProfile.createdCoins.edges.length) {
+      return null;
+    }
+
+    let maxToken: CreatedCoin | null = null;
+    let maxMarketCap = 0;
+
+    for (const edge of creator.creatorProfile.createdCoins.edges) {
+      const token = edge.node;
+      const marketCap = parseFloat(token.marketCap) || 0;
+      
+      if (marketCap > maxMarketCap) {
+        maxMarketCap = marketCap;
+        maxToken = token;
+      }
+    }
+
+    return maxToken ? { token: maxToken, marketCap: maxMarketCap } : null;
+  }
+
   private async formatCreatorMessage(creator: Creator, reason?: string): Promise<string> {
     const { address, name, createdAt, creatorProfile } = creator;
-    const { followedEdges, username, socialAccounts } = creatorProfile;
+    const { followedEdges, username, socialAccounts, vcFollowingStatus, createdCoins, followersInVcFollowing } = creatorProfile;
     const followerIndicator = this.getFollowerIndicator(followedEdges.count);
     
     let message = `NEW CREATOR\n\n`;
@@ -211,11 +379,30 @@ export class TelegramClient {
     message += `Name: ${this.escapeMarkdown(name)}\n`;
     message += `Address: \`${address}\`\n`;
     message += `Followers: ${followedEdges.count} ${followerIndicator}\n`;
+    
+    // Add vcFollowingStatus and VC followers count if FOLLOWING
+    if (vcFollowingStatus && vcFollowingStatus === 'FOLLOWING') {
+      message += `VC Following: ${this.escapeMarkdown(vcFollowingStatus)} (${followersInVcFollowing.count} VC followers)\n`;
+    } else if (vcFollowingStatus && vcFollowingStatus !== 'UNKNOWN') {
+      message += `VC Following: ${this.escapeMarkdown(vcFollowingStatus)}\n`;
+    }
+    
     message += `Created: ${this.escapeMarkdown(new Date(createdAt).toLocaleString('en-US'))}\n`;
     
     if (username) {
       const usernameLink = this.formatUsernameLink(username, 'zora');
       message += `Username: ${usernameLink}\n`;
+    }
+
+    // Add best token info if exists
+    const maxTokenInfo = this.getMaxMarketCapToken(creator);
+    if (maxTokenInfo && maxTokenInfo.marketCap > 0) {
+      message += `\nBest Token:\n`;
+      message += `  Name: ${this.escapeMarkdown(maxTokenInfo.token.name)}\n`;
+      message += `  Market Cap: $${maxTokenInfo.marketCap.toLocaleString('en-US')}\n`;
+      message += `  Address: \`${maxTokenInfo.token.address}\`\n`;
+    } else if (createdCoins.edges.length > 0) {
+      message += `\nCreated Tokens: ${createdCoins.edges.length}\n`;
     }
 
     // Add Farcaster with followers and clickable link
@@ -266,22 +453,35 @@ export class TelegramClient {
 
   private getCreatorKeyboardMarkup(creator: Creator): InlineKeyboardMarkup {
     const address = creator.address;
+    const twitterUsername = creator.creatorProfile.socialAccounts.twitter?.username;
+    
+    const keyboard: InlineKeyboardButton[][] = [
+      [
+        { 
+          text: 'Based Bot', 
+          url: `https://t.me/based_eth_bot?start=r_worldfinaltour_b_${address}` 
+        }
+      ],
+      [
+        {
+          text: 'DexScreener', 
+          url: `https://dexscreener.com/base/${address}` 
+        }
+      ]
+    ];
+
+    // Add blacklist button if Twitter is connected
+    if (twitterUsername) {
+      keyboard.push([
+        {
+          text: '🚫 Blacklist Twitter',
+          callback_data: `blacklist_twitter:${twitterUsername}`
+        }
+      ]);
+    }
     
     return {
-      inline_keyboard: [
-        [
-          { 
-            text: 'Based Bot', 
-            url: `https://t.me/based_eth_bot?start=r_worldfinaltour_b_${address}` 
-          }
-        ],
-        [
-            {
-                text: 'DexScreener', 
-                url: `https://dexscreener.com/base/${address}` 
-            }
-        ]
-      ]
+      inline_keyboard: keyboard
     };
   }
 
