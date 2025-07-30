@@ -51,10 +51,6 @@ export class ZoraClient {
                 username
               }
             }
-            vcFollowingStatus
-            followersInVcFollowing {
-              count
-            }
             createdCoins(first: 100) {
               edges {
                 node {
