@@ -31,7 +31,7 @@ services:
     container_name: zora-trenches-redis
     restart: unless-stopped
     ports:
-      - "6380:6379"
+      - "6380:6381"
     volumes:
       - redis_data:/data
     networks:
