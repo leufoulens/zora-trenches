@@ -73,19 +73,30 @@ export class TelegramClient {
 
       if (!input) {
         await this.bot.sendMessage(chatId, 
-          'Использование: /add_alpha_user username [описание]\n' +
+          'Использование: /add_alpha_user username ["описание в кавычках"]\n' +
           'Примеры:\n' +
           '• /add_alpha_user ufo\n' +
-          '• /add_alpha_user ufo Создатель популярных NFT коллекций\n' +
-          '• /add_alpha_user wakeupremember Эксперт в области DeFi и криптовалют'
+          '• /add_alpha_user ufo "Создатель популярных NFT коллекций"\n' +
+          '• /add_alpha_user wakeupremember "Эксперт в области DeFi и криптовалют"'
         );
         return;
       }
 
-      // Parse username and description
-      const parts = input.split(/\s+/);
-      const username = parts[0];
-      const description = parts.slice(1).join(' ').trim() || undefined;
+      // Parse username and description with proper quote handling
+      let username: string;
+      let description: string | undefined;
+
+      // Check if input contains quoted description
+      const quoteMatch = input.match(/^(\S+)\s+"([^"]*)"$/);
+      if (quoteMatch) {
+        // Format: username "description"
+        username = quoteMatch[1];
+        description = quoteMatch[2].trim() || undefined;
+      } else {
+        // Format: username only (no quotes)
+        username = input.trim();
+        description = undefined;
+      }
 
       if (!username.trim()) {
         await this.bot.sendMessage(chatId, 'Необходимо указать username');
