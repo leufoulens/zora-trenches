@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     environment:
       # Redis подключение к контейнеру
-      - REDIS_URL=redis://redis:6381
+      - REDIS_URL=redis://redis:6379
       # Остальные переменные нужно задать в .env файле
       - ZORA_ENDPOINT_URL=${ZORA_ENDPOINT_URL}
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
@@ -31,7 +31,7 @@ services:
     container_name: zora-trenches-redis
     restart: unless-stopped
     ports:
-      - "6380:6381"
+      - "6380:6379"
     volumes:
       - redis_data:/data
     networks:
