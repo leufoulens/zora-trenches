@@ -32,39 +32,6 @@ export class TelegramClient {
   }
 
   private setupCommandHandlers(): void {
-    // Command: /add_alpha_list
-    this.bot.onText(/\/add_alpha_list(?:\s+(.+))?/, async (msg, match) => {
-      const chatId = msg.chat.id;
-      const usernames = match?.[1];
-
-      if (!usernames) {
-        await this.bot.sendMessage(chatId, 
-          'Использование: /add_alpha_list username1 username2 username3\n' +
-          'Пример: /add_alpha_list ufo wakeupremember wethemniggas'
-        );
-        return;
-      }
-
-      const usernameList = usernames.split(/\s+/).filter(u => u.trim());
-      if (usernameList.length === 0) {
-        await this.bot.sendMessage(chatId, 'Необходимо указать хотя бы один username');
-        return;
-      }
-
-      try {
-        const addedCount = await this.redisClient.addToAlphaList(usernameList);
-        const totalCount = await this.redisClient.getAlphaListCount();
-        
-        await this.bot.sendMessage(chatId, 
-          `✅ Добавлено ${addedCount} новых пользователей в alpha list\n` +
-          `Общее количество: ${totalCount}\n\n` +
-          `Добавленные usernames:\n${usernameList.map(u => `• ${u}`).join('\n')}`
-        );
-      } catch (error) {
-        console.error('Error in add_alpha_list command:', error);
-        await this.bot.sendMessage(chatId, 'Ошибка при добавлении в alpha list');
-      }
-    });
 
     // Command: /add_alpha_user - adds single user with optional description
     this.bot.onText(/\/add_alpha_user(?:\s+(.+))?/, async (msg, match) => {
