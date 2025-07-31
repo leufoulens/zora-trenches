@@ -132,21 +132,21 @@ export class ZoraMonitor {
           await this.telegramClient.sendToGeneral(creator);
           
           // Check if username is in alpha list and send to HIGH chat
-          const isAlphaUser = await this.checkAlphaUser(creator);
+          const alphaUserCheck = await this.checkAlphaUser(creator);
           
           // Check if need to send to HIGH chat
           const highValueCheck = await this.checkHighValueCreator(creator);
-          if (highValueCheck.isHigh || isAlphaUser) {
+          if (highValueCheck.isHigh || alphaUserCheck.isAlpha) {
             highValueCount++;
-            const reason = isAlphaUser ? 'ALPHA USER' : highValueCheck.reason;
-            await this.telegramClient.sendToHigh(creator, reason);
+            const reason = alphaUserCheck.isAlpha ? 'ALPHA USER' : highValueCheck.reason;
+            await this.telegramClient.sendToHigh(creator, reason, alphaUserCheck.description);
             console.log(`HIGH VALUE: ${creator.name} - ${reason}`);
           }
           
           // Mark as processed
           await this.redisClient.markAddressAsProcessed(creator.address);
           
-          const logReason = isAlphaUser ? 'ALPHA USER' : highValueCheck.reason;
+          const logReason = alphaUserCheck.isAlpha ? 'ALPHA USER' : highValueCheck.reason;
           console.log(`Processed new creator: ${creator.name} (${logReason})`);
           
           // Small delay between sends for API
@@ -281,17 +281,22 @@ export class ZoraMonitor {
     return maxMarketCap;
   }
 
-  private async checkAlphaUser(creator: Creator): Promise<boolean> {
+  private async checkAlphaUser(creator: Creator): Promise<{isAlpha: boolean, description?: string}> {
     const username = creator.creatorProfile.username;
     if (!username) {
-      return false;
+      return {isAlpha: false};
     }
 
     try {
-      return await this.redisClient.isInAlphaList(username);
+      const isInList = await this.redisClient.isInAlphaList(username);
+      if (isInList) {
+        const description = await this.redisClient.getAlphaUserDescription(username);
+        return {isAlpha: true, description: description || undefined};
+      }
+      return {isAlpha: false};
     } catch (error) {
       console.error(`Error checking alpha list for ${username}:`, error);
-      return false;
+      return {isAlpha: false};
     }
   }
 

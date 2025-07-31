@@ -66,20 +66,73 @@ export class TelegramClient {
       }
     });
 
+    // Command: /add_alpha_user - adds single user with optional description
+    this.bot.onText(/\/add_alpha_user(?:\s+(.+))?/, async (msg, match) => {
+      const chatId = msg.chat.id;
+      const input = match?.[1];
+
+      if (!input) {
+        await this.bot.sendMessage(chatId, 
+          'Использование: /add_alpha_user username [описание]\n' +
+          'Примеры:\n' +
+          '• /add_alpha_user ufo\n' +
+          '• /add_alpha_user ufo Создатель популярных NFT коллекций\n' +
+          '• /add_alpha_user wakeupremember Эксперт в области DeFi и криптовалют'
+        );
+        return;
+      }
+
+      // Parse username and description
+      const parts = input.split(/\s+/);
+      const username = parts[0];
+      const description = parts.slice(1).join(' ').trim() || undefined;
+
+      if (!username.trim()) {
+        await this.bot.sendMessage(chatId, 'Необходимо указать username');
+        return;
+      }
+
+      try {
+        const success = await this.redisClient.addToAlphaListWithDescription(username, description);
+        const totalCount = await this.redisClient.getAlphaListCount();
+        
+        if (success) {
+          let message = `✅ Пользователь ${username} добавлен в alpha list`;
+          if (description) {
+            message += `\nОписание: ${description}`;
+          }
+          message += `\nОбщее количество пользователей: ${totalCount}`;
+          
+          await this.bot.sendMessage(chatId, message);
+        } else {
+          await this.bot.sendMessage(chatId, 'Ошибка при добавлении пользователя в alpha list');
+        }
+      } catch (error) {
+        console.error('Error in add_alpha_user command:', error);
+        await this.bot.sendMessage(chatId, 'Ошибка при добавлении в alpha list');
+      }
+    });
+
     // Command: /alpha_list
     this.bot.onText(/\/alpha_list/, async (msg) => {
       const chatId = msg.chat.id;
 
       try {
-        const alphaList = await this.redisClient.getAlphaList();
+        const alphaListWithDescriptions = await this.redisClient.getAlphaListWithDescriptions();
         
-        if (alphaList.length === 0) {
+        if (alphaListWithDescriptions.length === 0) {
           await this.bot.sendMessage(chatId, 'Alpha list пуст');
           return;
         }
 
-        const message = `📋 Alpha List (${alphaList.length} пользователей):\n\n` +
-          alphaList.map((username, index) => `${index + 1}. ${username}`).join('\n');
+        const message = `📋 Alpha List (${alphaListWithDescriptions.length} пользователей):\n\n` +
+          alphaListWithDescriptions.map((item, index) => {
+            let userLine = `${index + 1}. ${item.username}`;
+            if (item.description) {
+              userLine += `\n   📝 ${item.description}`;
+            }
+            return userLine;
+          }).join('\n\n');
 
         // Split message if too long (Telegram limit)
         if (message.length > 4000) {
@@ -364,7 +417,7 @@ export class TelegramClient {
     return maxToken ? { token: maxToken, marketCap: maxMarketCap } : null;
   }
 
-  private async formatCreatorMessage(creator: Creator, reason?: string): Promise<string> {
+  private async formatCreatorMessage(creator: Creator, reason?: string, alphaDescription?: string): Promise<string> {
     const { address, name, createdAt, creatorProfile } = creator;
     const { followedEdges, username, socialAccounts, vcFollowingStatus, createdCoins, followersInVcFollowing } = creatorProfile;
     const followerIndicator = this.getFollowerIndicator(followedEdges.count);
@@ -373,7 +426,14 @@ export class TelegramClient {
     
     // Add reason at the beginning if provided
     if (reason) {
-      message = `${reason}\n\n` + message;
+      message = `${reason}\n`;
+      
+      // Add alpha description if this is an ALPHA USER and description exists
+      if (reason === 'ALPHA USER' && alphaDescription) {
+        message += `📝 ${alphaDescription}\n`;
+      }
+      
+      message += `\nNEW CREATOR\n\n`;
     }
     
     message += `Name: ${this.escapeMarkdown(name)}\n`;
@@ -528,9 +588,9 @@ export class TelegramClient {
     }
   }
 
-  async sendToHigh(creator: Creator, reason: string): Promise<void> {
+  async sendToHigh(creator: Creator, reason: string, alphaDescription?: string): Promise<void> {
     try {
-      const message = await this.formatCreatorMessage(creator, reason);
+      const message = await this.formatCreatorMessage(creator, reason, alphaDescription);
       const keyboard = this.getCreatorKeyboardMarkup(creator);
       
       // Check if this is an ALPHA USER and image exists
@@ -567,7 +627,7 @@ export class TelegramClient {
       console.error(`Error sending to HIGH chat for ${creator.address}:`, error);
       // Fallback: try sending without Markdown if it fails
       try {
-        const plainMessage = await this.formatCreatorMessage(creator, reason);
+        const plainMessage = await this.formatCreatorMessage(creator, reason, alphaDescription);
         const escapedMessage = plainMessage.replace(/[`*_[\]()]/g, '');
         await this.bot.sendMessage(config.telegramChatHigh, escapedMessage);
         console.log(`Sent fallback message to HIGH chat: ${creator.name}`);

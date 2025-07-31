@@ -65,6 +65,7 @@ export class RedisClient {
 
   // Alpha list management methods
   private readonly ALPHA_LIST_KEY = 'zora:alpha_list';
+  private readonly ALPHA_DESCRIPTIONS_KEY = 'zora:alpha_descriptions';
 
   async addToAlphaList(usernames: string[]): Promise<number> {
     try {
@@ -77,10 +78,46 @@ export class RedisClient {
     }
   }
 
+  async addToAlphaListWithDescription(username: string, description?: string): Promise<boolean> {
+    try {
+      const normalizedUsername = username.toLowerCase().trim();
+      
+      // Add to alpha list
+      await this.client.sAdd(this.ALPHA_LIST_KEY, normalizedUsername);
+      
+      // Add description if provided
+      if (description && description.trim()) {
+        await this.client.hSet(this.ALPHA_DESCRIPTIONS_KEY, normalizedUsername, description.trim());
+      }
+      
+      return true;
+    } catch (error) {
+      console.error('Error adding to alpha list with description:', error);
+      return false;
+    }
+  }
+
+  async getAlphaUserDescription(username: string): Promise<string | null> {
+    try {
+      const normalizedUsername = username.toLowerCase().trim();
+      const description = await this.client.hGet(this.ALPHA_DESCRIPTIONS_KEY, normalizedUsername);
+      return description || null;
+    } catch (error) {
+      console.error('Error getting alpha user description:', error);
+      return null;
+    }
+  }
+
   async removeFromAlphaList(username: string): Promise<boolean> {
     try {
       const normalizedUsername = username.toLowerCase().trim();
       const result = await this.client.sRem(this.ALPHA_LIST_KEY, normalizedUsername);
+      
+      // Also remove description if exists
+      if (result > 0) {
+        await this.client.hDel(this.ALPHA_DESCRIPTIONS_KEY, normalizedUsername);
+      }
+      
       return result > 0;
     } catch (error) {
       console.error('Error removing from alpha list:', error);
@@ -104,6 +141,21 @@ export class RedisClient {
       return members.sort();
     } catch (error) {
       console.error('Error getting alpha list:', error);
+      return [];
+    }
+  }
+
+  async getAlphaListWithDescriptions(): Promise<{username: string, description?: string}[]> {
+    try {
+      const members = await this.client.sMembers(this.ALPHA_LIST_KEY);
+      const descriptions = await this.client.hGetAll(this.ALPHA_DESCRIPTIONS_KEY);
+      
+      return members.sort().map(username => ({
+        username,
+        description: descriptions[username] || undefined
+      }));
+    } catch (error) {
+      console.error('Error getting alpha list with descriptions:', error);
       return [];
     }
   }

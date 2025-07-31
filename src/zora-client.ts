@@ -20,7 +20,6 @@ export class ZoraClient {
       headers: {
         'Content-Type': 'application/json',
         'User-Agent': 'ZoraTrenchesMonitor/1.0',
-        'Authorization': `Bearer ${config.zoraApiKey}`
       }
     });
   }
