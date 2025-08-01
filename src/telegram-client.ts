@@ -91,6 +91,112 @@ export class TelegramClient {
       }
     });
 
+    // Command: /add_alpha_user_batch - adds multiple users with descriptions
+    this.bot.onText(/\/add_alpha_user_batch(?:\s+([\s\S]+))?/, async (msg, match) => {
+      const chatId = msg.chat.id;
+      const input = match?.[1];
+
+      if (!input) {
+        await this.bot.sendMessage(chatId, 
+          'Использование: /add_alpha_user_batch\n' +
+          'Формат: username (описание)\n\n' +
+          'Пример:\n' +
+          '0x0298f4332e3857631385b39766325058a93e249f (165к фолловеров фаркастер, фаундер какого то теха sablier, можно на копейку)\n' +
+          '0x075b108fc0a6426f9dec9a5c18e87eb577d1346a (horsefacts админ/дев фаркастера, можно на копейку)\n' +
+          '0x081c7f89dffc2f618a0f4347c06fdf70f52e6510 (профиль kaloh ещё один, можно на копейку)'
+        );
+        return;
+      }
+
+      try {
+        // Parse each line: username (description)
+        const lines = input.trim().split('\n').filter(line => line.trim());
+        const users: { username: string; description: string }[] = [];
+        const errors: string[] = [];
+
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i].trim();
+          
+          // Match pattern: username (description)
+          const match = line.match(/^([^\s(]+)\s*\(([^)]+)\)$/);
+          
+          if (match) {
+            const username = match[1].trim();
+            const description = match[2].trim();
+            
+            if (username && description) {
+              users.push({ username, description });
+            } else {
+              errors.push(`Строка ${i + 1}: пустой username или описание`);
+            }
+          } else {
+            errors.push(`Строка ${i + 1}: неверный формат (ожидается: username (описание))`);
+          }
+        }
+
+        if (users.length === 0) {
+          await this.bot.sendMessage(chatId, 
+            'Не найдено корректных записей для добавления\n\n' +
+            (errors.length > 0 ? `Ошибки:\n${errors.join('\n')}` : '')
+          );
+          return;
+        }
+
+        // Add users to alpha list
+        let addedCount = 0;
+        const addErrors: string[] = [];
+
+        for (const user of users) {
+          try {
+            const success = await this.redisClient.addToAlphaListWithDescription(user.username, user.description);
+            if (success) {
+              addedCount++;
+            } else {
+              addErrors.push(`${user.username}: ошибка при добавлении`);
+            }
+          } catch (error) {
+            addErrors.push(`${user.username}: ${error}`);
+          }
+        }
+
+        const totalCount = await this.redisClient.getAlphaListCount();
+
+        // Prepare response message
+        let message = `✅ Batch добавление завершено\n\n`;
+        message += `Добавлено: ${addedCount} из ${users.length} пользователей\n`;
+        message += `Общее количество в alpha list: ${totalCount}\n\n`;
+
+        if (addedCount > 0) {
+          message += `Успешно добавлены:\n`;
+          users.slice(0, addedCount).forEach((user, index) => {
+            message += `${index + 1}. ${user.username}\n   📝 ${user.description}\n\n`;
+          });
+        }
+
+        if (errors.length > 0) {
+          message += `\nОшибки форматирования:\n${errors.join('\n')}\n\n`;
+        }
+
+        if (addErrors.length > 0) {
+          message += `\nОшибки добавления:\n${addErrors.join('\n')}`;
+        }
+
+        // Split message if too long (Telegram limit)
+        if (message.length > 4000) {
+          const chunks = this.splitMessage(message, 4000);
+          for (const chunk of chunks) {
+            await this.bot.sendMessage(chatId, chunk);
+          }
+        } else {
+          await this.bot.sendMessage(chatId, message);
+        }
+
+      } catch (error) {
+        console.error('Error in add_alpha_user_batch command:', error);
+        await this.bot.sendMessage(chatId, 'Ошибка при batch добавлении в alpha list');
+      }
+    });
+
     // Command: /alpha_list
     this.bot.onText(/\/alpha_list/, async (msg) => {
       const chatId = msg.chat.id;
