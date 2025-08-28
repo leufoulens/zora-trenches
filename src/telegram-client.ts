@@ -4,6 +4,7 @@ import { config } from './config';
 import { XApiClient } from './x-api-client';
 import { FarcasterClient } from './farcaster-client';
 import { RedisClient } from './redis-client';
+import { FileStorageClient } from './file-storage-client';
 import * as path from 'path';
 import * as fs from 'fs';
 
@@ -12,12 +13,14 @@ export class TelegramClient {
   private xApiClient: XApiClient;
   private farcasterClient: FarcasterClient;
   private redisClient: RedisClient;
+  private fileStorageClient: FileStorageClient;
 
-  constructor(redisClient: RedisClient) {
+  constructor(redisClient: RedisClient, fileStorageClient: FileStorageClient) {
     this.bot = new TelegramBot(config.telegramBotToken, { polling: false });
     this.xApiClient = new XApiClient();
     this.farcasterClient = new FarcasterClient();
     this.redisClient = redisClient;
+    this.fileStorageClient = fileStorageClient;
   }
 
   startBot(): void {
@@ -71,8 +74,8 @@ export class TelegramClient {
       }
 
       try {
-        const success = await this.redisClient.addToAlphaListWithDescription(username, description);
-        const totalCount = await this.redisClient.getAlphaListCount();
+        const success = await this.fileStorageClient.addToAlphaListWithDescription(username, description);
+        const totalCount = await this.fileStorageClient.getAlphaListCount();
         
         if (success) {
           let message = `✅ Пользователь ${username} добавлен в alpha list`;
@@ -148,7 +151,7 @@ export class TelegramClient {
 
         for (const user of users) {
           try {
-            const success = await this.redisClient.addToAlphaListWithDescription(user.username, user.description);
+            const success = await this.fileStorageClient.addToAlphaListWithDescription(user.username, user.description);
             if (success) {
               addedCount++;
             } else {
@@ -159,7 +162,7 @@ export class TelegramClient {
           }
         }
 
-        const totalCount = await this.redisClient.getAlphaListCount();
+        const totalCount = await this.fileStorageClient.getAlphaListCount();
 
         // Prepare response message
         let message = `✅ Batch добавление завершено\n\n`;
@@ -202,7 +205,7 @@ export class TelegramClient {
       const chatId = msg.chat.id;
 
       try {
-        const alphaListWithDescriptions = await this.redisClient.getAlphaListWithDescriptions();
+        const alphaListWithDescriptions = await this.fileStorageClient.getAlphaListWithDescriptions();
         
         if (alphaListWithDescriptions.length === 0) {
           await this.bot.sendMessage(chatId, 'Alpha list пуст');
@@ -247,8 +250,8 @@ export class TelegramClient {
       }
 
       try {
-        const removed = await this.redisClient.removeFromAlphaList(username);
-        const totalCount = await this.redisClient.getAlphaListCount();
+        const removed = await this.fileStorageClient.removeFromAlphaList(username);
+        const totalCount = await this.fileStorageClient.getAlphaListCount();
         
         if (removed) {
           await this.bot.sendMessage(chatId, 
@@ -286,8 +289,8 @@ export class TelegramClient {
       }
 
       try {
-        const addedCount = await this.redisClient.addToTwitterBlacklist(usernameList);
-        const totalCount = await this.redisClient.getTwitterBlacklistCount();
+        const addedCount = await this.fileStorageClient.addToTwitterBlacklist(usernameList);
+        const totalCount = await this.fileStorageClient.getTwitterBlacklistCount();
         
         await this.bot.sendMessage(chatId, 
           `🚫 Добавлено ${addedCount} новых Twitter аккаунтов в blacklist\n` +
@@ -305,7 +308,7 @@ export class TelegramClient {
       const chatId = msg.chat.id;
 
       try {
-        const blacklist = await this.redisClient.getTwitterBlacklist();
+        const blacklist = await this.fileStorageClient.getTwitterBlacklist();
         
         if (blacklist.length === 0) {
           await this.bot.sendMessage(chatId, 'Twitter blacklist пуст');
@@ -344,8 +347,8 @@ export class TelegramClient {
       }
 
       try {
-        const removed = await this.redisClient.removeFromTwitterBlacklist(username);
-        const totalCount = await this.redisClient.getTwitterBlacklistCount();
+        const removed = await this.fileStorageClient.removeFromTwitterBlacklist(username);
+        const totalCount = await this.fileStorageClient.getTwitterBlacklistCount();
         
         if (removed) {
           await this.bot.sendMessage(chatId, 
@@ -376,7 +379,7 @@ export class TelegramClient {
         
         try {
           // Check if already in blacklist
-          const isAlreadyBlacklisted = await this.redisClient.isInTwitterBlacklist(twitterUsername);
+          const isAlreadyBlacklisted = await this.fileStorageClient.isInTwitterBlacklist(twitterUsername);
           
           if (isAlreadyBlacklisted) {
             await this.bot.answerCallbackQuery(callbackQuery.id, {
@@ -387,8 +390,8 @@ export class TelegramClient {
           }
 
           // Add to blacklist
-          await this.redisClient.addToTwitterBlacklist([twitterUsername]);
-          const totalCount = await this.redisClient.getTwitterBlacklistCount();
+          await this.fileStorageClient.addToTwitterBlacklist([twitterUsername]);
+          const totalCount = await this.fileStorageClient.getTwitterBlacklistCount();
 
           // Send confirmation message
           await this.bot.sendMessage(chatId, 

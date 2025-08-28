@@ -21,8 +21,10 @@ services:
       - HIGH_FOLLOWERS_THRESHOLD=${HIGH_FOLLOWERS_THRESHOLD}
       - ZORA_API_KEY=${ZORA_API_KEY}
     volumes:
-      # Подключаем volume для сохранения данных blacklist и alphalist
-      - app_data:/app/data
+      # Bind mount: прямое подключение локальной папки data к контейнеру
+      - ./data:/app/data
+      # Альтернативно, можно указать абсолютный путь:
+      # - /host/path/to/data:/app/data
     depends_on:
       - redis
     networks:
@@ -42,8 +44,7 @@ services:
 
 volumes:
   redis_data:
-  app_data:
 
 networks:
   zora-network:
-    driver: bridge 
+    driver: bridge

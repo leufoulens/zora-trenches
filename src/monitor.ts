@@ -1,5 +1,6 @@
 import { ZoraClient } from './zora-client';
 import { RedisClient } from './redis-client';
+import { FileStorageClient } from './file-storage-client';
 import { TelegramClient } from './telegram-client';
 import { XApiClient } from './x-api-client';
 import { FarcasterClient } from './farcaster-client';
@@ -9,6 +10,7 @@ import { config } from './config';
 export class ZoraMonitor {
   private zoraClient: ZoraClient;
   private redisClient: RedisClient;
+  private fileStorageClient: FileStorageClient;
   private telegramClient: TelegramClient;
   private xApiClient: XApiClient;
   private farcasterClient: FarcasterClient;
@@ -17,7 +19,8 @@ export class ZoraMonitor {
   constructor() {
     this.zoraClient = new ZoraClient();
     this.redisClient = new RedisClient();
-    this.telegramClient = new TelegramClient(this.redisClient);
+    this.fileStorageClient = new FileStorageClient();
+    this.telegramClient = new TelegramClient(this.redisClient, this.fileStorageClient);
     this.xApiClient = new XApiClient();
     this.farcasterClient = new FarcasterClient();
   }
@@ -112,7 +115,7 @@ export class ZoraMonitor {
           // Check if Twitter account is in blacklist
           const twitterUsername = creator.creatorProfile.socialAccounts.twitter?.username;
           if (twitterUsername) {
-            const isBlacklisted = await this.redisClient.isInTwitterBlacklist(twitterUsername);
+            const isBlacklisted = await this.fileStorageClient.isInTwitterBlacklist(twitterUsername);
             if (isBlacklisted) {
               console.log(`Skipping creator ${creator.name} - Twitter @${twitterUsername} is blacklisted`);
               await this.redisClient.markAddressAsProcessed(creator.address);
@@ -145,6 +148,18 @@ export class ZoraMonitor {
           
           // Mark as processed
           await this.redisClient.markAddressAsProcessed(creator.address);
+          
+          // Auto-add Twitter account to blacklist after processing
+          if (twitterUsername) {
+            try {
+              const addedCount = await this.fileStorageClient.addToTwitterBlacklist([twitterUsername]);
+              if (addedCount > 0) {
+                console.log(`Auto-blacklisted Twitter @${twitterUsername} for creator ${creator.name}`);
+              }
+            } catch (error) {
+              console.error(`Error auto-blacklisting Twitter @${twitterUsername}:`, error);
+            }
+          }
           
           const logReason = alphaUserCheck.isAlpha ? 'ALPHA USER' : highValueCheck.reason;
           console.log(`Processed new creator: ${creator.name} (${logReason})`);
@@ -288,9 +303,9 @@ export class ZoraMonitor {
     }
 
     try {
-      const isInList = await this.redisClient.isInAlphaList(username);
+      const isInList = await this.fileStorageClient.isInAlphaList(username);
       if (isInList) {
-        const description = await this.redisClient.getAlphaUserDescription(username);
+        const description = await this.fileStorageClient.getAlphaUserDescription(username);
         return {isAlpha: true, description: description || undefined};
       }
       return {isAlpha: false};

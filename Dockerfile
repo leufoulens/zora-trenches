@@ -34,11 +34,14 @@ COPY --from=builder /app/dist ./dist
 # Копируем папку public с ресурсами
 COPY --from=builder /app/public ./public
 
+# Создаем директорию для данных
+RUN mkdir -p /app/data
+
 # Создаем пользователя для безопасности
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nodejs -u 1001
 
-# Меняем владельца файлов
+# Меняем владельца файлов (включая data директорию)
 RUN chown -R nodejs:nodejs /app
 USER nodejs
 
