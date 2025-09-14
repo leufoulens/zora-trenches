@@ -1,8 +1,6 @@
 import TelegramBot from 'node-telegram-bot-api';
 import { Creator, InlineKeyboardMarkup, InlineKeyboardButton, CreatedCoin } from './types';
 import { config } from './config';
-import { XApiClient } from './x-api-client';
-import { FarcasterClient } from './farcaster-client';
 import { RedisClient } from './redis-client';
 import { FileStorageClient } from './file-storage-client';
 import * as path from 'path';
@@ -10,15 +8,11 @@ import * as fs from 'fs';
 
 export class TelegramClient {
   private bot: TelegramBot;
-  private xApiClient: XApiClient;
-  private farcasterClient: FarcasterClient;
   private redisClient: RedisClient;
   private fileStorageClient: FileStorageClient;
 
   constructor(redisClient: RedisClient, fileStorageClient: FileStorageClient) {
     this.bot = new TelegramBot(config.telegramBotToken, { polling: false });
-    this.xApiClient = new XApiClient();
-    this.farcasterClient = new FarcasterClient();
     this.redisClient = redisClient;
     this.fileStorageClient = fileStorageClient;
   }
@@ -461,14 +455,16 @@ export class TelegramClient {
     return text.replace(/[_*[\]()~`>#+=|{}.!-]/g, '\\$&');
   }
 
-  private formatUsernameLink(username: string, platform: 'zora' | 'farcaster' | 'twitter'): string {
+  private formatUsernameLink(username: string, platform: 'zora' | 'farcaster' | 'twitter' | 'tiktok' | 'instagram'): string {
     const baseUrls = {
       zora: 'https://zora.co',
       farcaster: 'https://warpcast.com',
-      twitter: 'https://x.com'
+      twitter: 'https://x.com',
+      tiktok: 'https://tiktok.com/@',
+      instagram: 'https://instagram.com'
     };
     
-    const url = `${baseUrls[platform]}/${username}`;
+    const url = platform === 'tiktok' ? `${baseUrls[platform]}${username}` : `${baseUrls[platform]}/${username}`;
     // Don't escape username inside markdown links - it will show escaped characters
     return `[@${username}](${url})`;
   }
@@ -552,40 +548,30 @@ export class TelegramClient {
       message += `\nCreated Tokens: ${createdCoins.edges.length}\n`;
     }
 
-    // Add Farcaster with followers and clickable link
-    if (socialAccounts.farcaster?.displayName || socialAccounts.farcaster?.username) {
-      message += `\nFarcaster:\n`;
-      if (socialAccounts.farcaster.displayName) {
-        message += `  Name: ${this.escapeMarkdown(socialAccounts.farcaster.displayName)}\n`;
-      }
-      if (socialAccounts.farcaster.username) {
-        // Get follower count via Farcaster API
-        const farcasterData = await this.getFarcasterData(socialAccounts.farcaster.username);
-        const usernameLink = this.formatUsernameLink(socialAccounts.farcaster.username, 'farcaster');
-        
-        if (farcasterData) {
-          message += `  ${usernameLink} (${farcasterData.followers.toLocaleString('en-US')} followers)\n`;
-        } else {
-          message += `  ${usernameLink}\n`;
-        }
-      }
-    }
+    // Add all social networks from GraphQL data
+    const socialNetworks = [
+      { name: 'Farcaster', account: socialAccounts.farcaster, platform: 'farcaster' as const },
+      { name: 'Twitter', account: socialAccounts.twitter, platform: 'twitter' as const },
+      { name: 'TikTok', account: socialAccounts.tiktok, platform: 'tiktok' as const },
+      { name: 'Instagram', account: socialAccounts.instagram, platform: 'instagram' as const }
+    ];
 
-    // Add Twitter with followers and clickable link
-    if (socialAccounts.twitter?.displayName || socialAccounts.twitter?.username) {
-      message += `\nTwitter:\n`;
-      if (socialAccounts.twitter.displayName) {
-        message += `  Name: ${this.escapeMarkdown(socialAccounts.twitter.displayName)}\n`;
-      }
-      if (socialAccounts.twitter.username) {
-        // Get follower count via X API
-        const followersCount = await this.getTwitterFollowers(socialAccounts.twitter.username);
-        const usernameLink = this.formatUsernameLink(socialAccounts.twitter.username, 'twitter');
+    for (const network of socialNetworks) {
+      if (network.account?.displayName || network.account?.username) {
+        message += `\n${network.name}:\n`;
         
-        if (followersCount !== null) {
-          message += `  ${usernameLink} (${followersCount.toLocaleString('en-US')} followers)\n`;
-        } else {
-          message += `  ${usernameLink}\n`;
+        if (network.account.displayName) {
+          message += `  Name: ${this.escapeMarkdown(network.account.displayName)}\n`;
+        }
+        
+        if (network.account.username) {
+          const usernameLink = this.formatUsernameLink(network.account.username, network.platform);
+          
+          if (network.account.followerCount !== null && network.account.followerCount !== undefined) {
+            message += `  ${usernameLink} (${network.account.followerCount.toLocaleString('en-US')} followers)\n`;
+          } else {
+            message += `  ${usernameLink}\n`;
+          }
         }
       }
     }
@@ -632,23 +618,6 @@ export class TelegramClient {
     };
   }
 
-  private async getTwitterFollowers(username: string): Promise<number | null> {
-    try {
-      return await this.xApiClient.getFollowersCount(username);
-    } catch (error) {
-      console.error(`Error getting X followers for @${username}:`, error);
-      return null;
-    }
-  }
-
-  private async getFarcasterData(username: string): Promise<{ followers: number; following: number } | null> {
-    try {
-      return await this.farcasterClient.getUserData(username);
-    } catch (error) {
-      console.error(`Error getting Farcaster data for @${username}:`, error);
-      return null;
-    }
-  }
 
   async sendToGeneral(creator: Creator): Promise<void> {
     try {
@@ -739,26 +708,4 @@ export class TelegramClient {
     }
   }
 
-  // Methods for cache statistics
-  getXApiCacheSize(): number {
-    return this.xApiClient.getCacheSize();
-  }
-
-  getFarcasterCacheSize(): number {
-    return this.farcasterClient.getCacheSize();
-  }
-
-  // Methods for cache cleanup
-  clearXApiCache(): void {
-    this.xApiClient.clearCache();
-  }
-
-  clearFarcasterCache(): void {
-    this.farcasterClient.clearCache();
-  }
-
-  clearAllSocialCaches(): void {
-    this.clearXApiCache();
-    this.clearFarcasterCache();
-  }
 } 

@@ -1,11 +1,14 @@
 export interface SocialAccount {
   displayName: string | null;
   username: string | null;
+  followerCount?: number | null;
 }
 
 export interface SocialAccounts {
   farcaster: SocialAccount | null;
   twitter: SocialAccount | null;
+  tiktok: SocialAccount | null;
+  instagram: SocialAccount | null;
 }
 
 export interface CreatedCoin {

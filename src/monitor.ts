@@ -2,8 +2,6 @@ import { ZoraClient } from './zora-client';
 import { RedisClient } from './redis-client';
 import { FileStorageClient } from './file-storage-client';
 import { TelegramClient } from './telegram-client';
-import { XApiClient } from './x-api-client';
-import { FarcasterClient } from './farcaster-client';
 import { Creator } from './types';
 import { config } from './config';
 
@@ -12,8 +10,6 @@ export class ZoraMonitor {
   private redisClient: RedisClient;
   private fileStorageClient: FileStorageClient;
   private telegramClient: TelegramClient;
-  private xApiClient: XApiClient;
-  private farcasterClient: FarcasterClient;
   private isRunning: boolean = false;
 
   constructor() {
@@ -21,8 +17,6 @@ export class ZoraMonitor {
     this.redisClient = new RedisClient();
     this.fileStorageClient = new FileStorageClient();
     this.telegramClient = new TelegramClient(this.redisClient, this.fileStorageClient);
-    this.xApiClient = new XApiClient();
-    this.farcasterClient = new FarcasterClient();
   }
 
   async start(): Promise<void> {
@@ -60,17 +54,8 @@ export class ZoraMonitor {
     
     await this.redisClient.disconnect();
     
-    const xApiCacheSize = this.telegramClient.getXApiCacheSize();
-    const farcasterCacheSize = this.telegramClient.getFarcasterCacheSize();
-    const directXCacheSize = this.xApiClient.getCacheSize();
-    const directFarcasterCacheSize = this.farcasterClient.getCacheSize();
-    
     await this.telegramClient.sendStatusMessage(
-      `Zora Trenches Monitor stopped\n` +
-      `X API cache (telegram): ${xApiCacheSize} entries\n` +
-      `X API cache (direct): ${directXCacheSize} entries\n` +
-      `Farcaster cache (telegram): ${farcasterCacheSize} entries\n` +
-      `Farcaster cache (direct): ${directFarcasterCacheSize} entries`
+      `Zora Trenches Monitor stopped`
     );
   }
 
@@ -180,10 +165,7 @@ export class ZoraMonitor {
         if (farcasterProfilesProcessed > 0) {
           console.log(`Farcaster profiles processed: ${farcasterProfilesProcessed}`);
         }
-        console.log(`X API cache (telegram): ${this.telegramClient.getXApiCacheSize()} entries`);
-        console.log(`X API cache (direct): ${this.xApiClient.getCacheSize()} entries`);
-        console.log(`Farcaster cache (telegram): ${this.telegramClient.getFarcasterCacheSize()} entries`);
-        console.log(`Farcaster cache (direct): ${this.farcasterClient.getCacheSize()} entries`);
+        // All follower data now comes from GraphQL, no external API caches needed
       } else {
         console.log('No new creators found');
       }
@@ -226,47 +208,30 @@ export class ZoraMonitor {
       };
     }
 
-    // Check X (Twitter) followers
-    if (creator.creatorProfile.socialAccounts.twitter?.username) {
-      try {
-        const xFollowers = await this.xApiClient.getFollowersCount(creator.creatorProfile.socialAccounts.twitter.username);
-        if (xFollowers !== null) {
-          if (xFollowers > maxFollowers) {
-            maxFollowers = xFollowers;
-            platform = 'X';
-          }
-          if (xFollowers >= config.highFollowersThreshold) {
-            return { 
-              isHigh: true, 
-              reason: `X: ${xFollowers.toLocaleString('en-US')} followers`, 
-              maxFollowers: xFollowers 
-            };
-          }
-        }
-      } catch (error) {
-        console.warn(`Error getting X data for @${creator.creatorProfile.socialAccounts.twitter.username}:`, error);
-      }
-    }
+    // Check all social networks from GraphQL data
+    const socialNetworks = [
+      { name: 'X', account: creator.creatorProfile.socialAccounts.twitter },
+      { name: 'Farcaster', account: creator.creatorProfile.socialAccounts.farcaster },
+      { name: 'TikTok', account: creator.creatorProfile.socialAccounts.tiktok },
+      { name: 'Instagram', account: creator.creatorProfile.socialAccounts.instagram }
+    ];
 
-    // Check Farcaster followers
-    if (creator.creatorProfile.socialAccounts.farcaster?.username) {
-      try {
-        const farcasterFollowers = await this.farcasterClient.getFollowersCount(creator.creatorProfile.socialAccounts.farcaster.username);
-        if (farcasterFollowers !== null) {
-          if (farcasterFollowers > maxFollowers) {
-            maxFollowers = farcasterFollowers;
-            platform = 'Farcaster';
-          }
-          if (farcasterFollowers >= config.highFollowersThreshold) {
-            return { 
-              isHigh: true, 
-              reason: `Farcaster: ${farcasterFollowers.toLocaleString('en-US')} followers`, 
-              maxFollowers: farcasterFollowers 
-            };
-          }
+    for (const network of socialNetworks) {
+      if (network.account?.followerCount) {
+        const followers = network.account.followerCount;
+        
+        if (followers > maxFollowers) {
+          maxFollowers = followers;
+          platform = network.name;
         }
-      } catch (error) {
-        console.warn(`Error getting Farcaster data for @${creator.creatorProfile.socialAccounts.farcaster.username}:`, error);
+        
+        if (followers >= config.highFollowersThreshold) {
+          return { 
+            isHigh: true, 
+            reason: `${network.name}: ${followers.toLocaleString('en-US')} followers`, 
+            maxFollowers: followers 
+          };
+        }
       }
     }
 
@@ -318,9 +283,6 @@ export class ZoraMonitor {
   // Method for cache cleanup (useful for debugging)
   async clearCache(): Promise<void> {
     await this.redisClient.clearProcessedAddresses();
-    this.telegramClient.clearAllSocialCaches();
-    this.xApiClient.clearCache();
-    this.farcasterClient.clearCache();
-    console.log('All caches cleared');
+    console.log('Cache cleared');
   }
 } 

@@ -44,9 +44,21 @@ export class ZoraClient {
               farcaster {
                 displayName
                 username
+                followerCount
               }
               twitter {
                 displayName
+                username
+                followerCount
+              }
+              tiktok {
+                displayName
+                username
+                followerCount
+              }
+              instagram {
+                displayName
+                followerCount
                 username
               }
             }
